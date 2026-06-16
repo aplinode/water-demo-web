@@ -3,9 +3,10 @@
 <html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Products | PureAqua</title>
+<title>Get a Quote | PureAqua</title>
+<meta content="Request a professional quote for premium RO water delivery. Tailored for corporate and industrial excellence." name="description"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
@@ -15,15 +16,14 @@
         .water-shadow {
             box-shadow: 0px 4px 20px rgba(0, 86, 179, 0.08);
         }
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 24px;
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background-color: #fcf9f8;
         }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(8px);
-            border: 1px solid #D1E9FF;
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #0059bb !important;
+            border-width: 2px !important;
         }
     </style>
 <script id="tailwind-config">
@@ -101,7 +101,6 @@
                         "headline-md": ["Work Sans"],
                         "body-lg": ["Work Sans"],
                         "caption": ["Work Sans"],
-                        "headline-lg-mobile": ["Work Sans"],
                         "label-md": ["Work Sans"],
                         "headline-lg": ["Work Sans"],
                         "body-md": ["Work Sans"]
@@ -111,17 +110,16 @@
                         "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
                         "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
                         "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
-                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
                         "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
                         "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
                         "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
                     }
-                }
-            }
+                },
+            },
         }
     </script>
 </head>
-<body class="bg-surface text-on-surface overflow-x-hidden font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<body class="bg-surface text-on-surface overflow-x-hidden">
 <header class="sticky top-0 z-50 flex justify-between items-center h-20 px-md md:px-lg w-full max-w-container-max mx-auto bg-surface border-b border-outline-variant shadow-sm transition-all duration-300">
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-primary text-3xl" data-icon="water_drop">water_drop</span>
@@ -131,7 +129,7 @@
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="pages/public/about.html">About</a>
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="pages/public/services.html">Services</a>
-<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1" href="pages/public/products.html">Products</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="pages/public/products.html">Products</a>
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="pages/public/process.html">Process</a>
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="pages/public/faq.html">FAQ</a>
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="pages/public/contact.html">Contact</a>
@@ -174,199 +172,170 @@
 
 </header>
 
-<!-- TopNavBar -->
+<!-- Header Navigation -->
 
 <main>
-<!-- Hero Banner -->
-<section class="relative h-[400px] flex items-center overflow-hidden bg-primary">
+<!-- Hero Section -->
+<section class="relative w-full h-[400px] flex items-center justify-center overflow-hidden bg-primary">
 
-<div class="relative z-10 max-w-container-max mx-auto px-md md:px-lg w-full">
-<div class="max-w-2xl">
-<h1 class="font-display-lg text-display-lg text-white mb-4">Our Products</h1>
-<p class="font-body-lg text-body-lg text-white/90 mb-8">Clinical grade purification systems and systematic delivery logistics for corporate and industrial excellence.</p>
+<div class="relative z-10 text-center px-md">
+<h1 class="font-display-lg text-display-lg text-on-primary mb-4 tracking-tight">Request A Quote</h1>
+<p class="text-on-primary/80 font-body-lg text-body-lg max-w-2xl mx-auto">
+                    Secure clinical-grade purity for your facility with our industrial-standard RO delivery systems. Professional service, guaranteed consistency.
+                </p>
 </div>
-</div>
-<!-- Decorative Wave (CSS Pattern) -->
-<div class="absolute bottom-0 left-0 w-full h-24 bg-surface" style="clip-path: ellipse(70% 100% at 50% 100%);"></div>
+<div class="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-surface to-transparent"></div>
 </section>
-<!-- Product Grid Section -->
-<section class="py-xl max-w-container-max mx-auto px-md md:px-lg">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-<!-- Main Product: 19L Bottle (High Priority Card) -->
-<div class="md:col-span-8 bg-white border border-outline-variant rounded-xl overflow-hidden flex flex-col md:flex-row water-shadow">
-<div class="md:w-1/2 relative h-64 md:h-auto overflow-hidden">
-<img class="w-full h-full object-cover" data-alt="A clean, professionally lit 19-liter water bottle made of clear premium plastic, standing in a sterile industrial environment. The lighting is high-key and bright, highlighting the purity of the water inside. The background features clinical white surfaces and soft blue accents, reinforcing a theme of industrial RO purification and professional quality standards." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9e1oN8TKovUTAUDtf5IbDYxAzNrccP8ZnZQVNydrZ8avekoRkomYIFeOttKYZhbwjSVhLRiaqzGideqFXWycHWDtEgLVU6WroPbuZejFT_TAbj10PkNk_dLnepPn0EkfQdP476uzPSq2Uzei_TUhA1CsPEAz9R7VgwxPBGiXzvlfpl6XASRZJwKNFB7rLlliZ2dMqQh4W2r0vdY5L6XvWdzmL_Rn5QdKlCQehTnciTI003jmfPdyaFiL0exnXQeht_6uTCZvFrkw"/>
-<div class="absolute top-4 left-4">
-<span class="bg-primary text-on-primary px-3 py-1 rounded-full text-label-md font-label-md flex items-center gap-1">
-<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-                                Available
-                            </span>
+<!-- Form & Summary Section -->
+<section class="max-w-container-max mx-auto px-md md:px-lg py-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl items-start">
+<!-- Lead Generation Form -->
+<div class="lg:col-span-8 bg-surface-container-lowest p-xl rounded-xl border border-outline-variant water-shadow">
+<form class="space-y-md" id="quote-form">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="full_name">Full Name</label>
+<input class="w-full h-12 px-4 rounded-xl border border-outline-variant bg-surface-bright transition-all" id="full_name" name="full_name" placeholder="John Doe" required="" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="phone">Phone Number</label>
+<input class="w-full h-12 px-4 rounded-xl border border-outline-variant bg-surface-bright transition-all" id="phone" name="phone" placeholder="+1 (555) 000-0000" required="" type="tel"/>
 </div>
 </div>
-<div class="md:w-1/2 p-lg flex flex-col justify-center">
-<h2 class="font-headline-lg text-headline-lg text-primary mb-2">19 Liter Water Bottle</h2>
-<div class="flex items-center gap-2 mb-4">
-<span class="text-headline-md font-headline-md text-on-surface">PKR 250</span>
-<span class="text-label-md font-label-md text-on-surface-variant">/ Refill</span>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="company">Company Name</label>
+<input class="w-full h-12 px-4 rounded-xl border border-outline-variant bg-surface-bright transition-all" id="company" name="company" placeholder="Enterprise Corp" type="text"/>
 </div>
-<ul class="space-y-3 mb-8">
-<li class="flex items-start gap-3 text-on-surface-variant">
-<span class="material-symbols-outlined text-primary">science</span>
-<span class="font-body-md text-body-md">7-Stage RO Purification Process</span>
-</li>
-<li class="flex items-start gap-3 text-on-surface-variant">
-<span class="material-symbols-outlined text-primary">sanitizer</span>
-<span class="font-body-md text-body-md">UV Sterilization &amp; Ozone Treatment</span>
-</li>
-<li class="flex items-start gap-3 text-on-surface-variant">
-<span class="material-symbols-outlined text-primary">scale</span>
-<span class="font-body-md text-body-md">Precise 19L / 5 Gallon Capacity</span>
-</li>
-</ul>
-<button class="bg-primary text-on-primary w-full py-4 rounded-xl font-bold hover:bg-on-secondary-fixed-variant transition-all">
-                            Get Quote
-                        </button>
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="product">Product Required</label>
+<select class="w-full h-12 px-4 rounded-xl border border-outline-variant bg-surface-bright transition-all appearance-none" id="product" name="product" required="">
+<option disabled="" selected="" value="">Select Product</option>
+<option value="19l_premium">19L Premium RO Bottle</option>
+<option value="bulk_tanker">Industrial Bulk Tanker</option>
+<option value="dispenser_service">Office Dispenser Service</option>
+<option value="custom">Custom Solution</option>
+</select>
 </div>
 </div>
-<!-- Office Supply Package -->
-<div class="md:col-span-4 bg-white border border-outline-variant rounded-xl p-md flex flex-col water-shadow">
-<div class="mb-6 h-48 rounded-lg overflow-hidden bg-surface-container-low border border-outline-variant">
-<img class="w-full h-full object-cover" data-alt="A modern, high-end corporate office breakroom featuring a sleek water dispenser and a stack of clean 19L water bottles. The environment is bright and minimalist with blue and white tones. Professional staff members in business attire are seen in the blurred background, emphasizing a corporate atmosphere of efficiency and health-conscious workplace culture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKBfBFHr37OKsgSq9Xnj2-IDxO6JbgUjCBDCU9hBHE-AQVO8tslsck_TDQ3yN9HvQ7bOf3khCVHPWAVc_s7Nof4AQknpUwYYIZ3jt1538-6X_lKxmOgd0Bpy1kN6hpC8xTSB0wVESoQje8MbrhWPdtCNrKFU-CriBJrTNQyeEIKvx8sdMD2duzgiWciPcv0DVEfP0aUKk-fQQdeCe6YRJGS-lORM24ixuGirIZgjVU8A9WM8s1cX6g3ORejiGGqsen2iLGTDYD2to"/>
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="address">Delivery Address</label>
+<input class="w-full h-12 px-4 rounded-xl border border-outline-variant bg-surface-bright transition-all" id="address" name="address" placeholder="123 Industrial Park, Business District" required="" type="text"/>
 </div>
-<div class="flex justify-between items-start mb-2">
-<h3 class="font-headline-md text-headline-md text-primary">Office Supply</h3>
-<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Limited Stock</span>
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="monthly">Monthly Requirement (Liters/Bottles)</label>
+<input class="w-full h-12 px-4 rounded-xl border border-outline-variant bg-surface-bright transition-all" id="monthly" name="monthly" placeholder="e.g. 500 Liters or 50 Bottles" required="" type="text"/>
 </div>
-<p class="text-on-surface-variant font-body-md text-body-md mb-6">Bulk recurring delivery scheduled for corporate hubs. Systematic inventory management included.</p>
-<div class="mt-auto">
-<div class="border-t border-outline-variant pt-4 mb-4">
-<p class="text-label-md font-label-md text-on-surface-variant">Starting from</p>
-<p class="text-headline-md font-headline-md">Custom Pricing</p>
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="message">Message / Special Instructions</label>
+<textarea class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-surface-bright transition-all" id="message" name="message" placeholder="Describe your specific delivery needs..." rows="4"></textarea>
 </div>
-<button class="border-2 border-primary text-primary w-full py-3 rounded-xl font-bold hover:bg-primary-container hover:text-on-primary-container transition-all">
-                            Inquire Now
-                        </button>
+<div class="pt-sm">
+<button class="w-full bg-primary text-on-primary h-14 rounded-xl font-headline-md text-headline-md hover:bg-primary-container transition-all active:scale-[0.98] shadow-lg flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined">send</span>
+                                Submit Quote Request
+                            </button>
 </div>
+</form>
 </div>
-<!-- Commercial Supply Package -->
-<div class="md:col-span-6 bg-white border border-outline-variant rounded-xl p-md flex flex-col md:flex-row gap-6 water-shadow">
-<div class="md:w-1/3 h-full min-h-[200px] rounded-lg overflow-hidden border border-outline-variant">
-<img class="w-full h-full object-cover" data-alt="An industrial-scale RO water purification plant with stainless steel machinery and complex piping systems. The scene is brightly lit with a sterile, clinical aesthetic. No people are visible. The focus is on the advanced technology and large-scale filtration infrastructure, rendered in a professional blue and white color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAErdY-Ux1SxFqDu2MBewjD52r8ouvMu_NUilMeD7S42p7EQKaWvdVFORRb1gFCNk9VxRY9pSI6YioYqFrFEcBl9B5fwr7jxd6VHPH4D4m_OCYtMn4O_0o-1LXLXFZj_ipROjVJxJ1siJQEXdHDAPFx0eDra1gjmsqQED2lVtBCggdtb5uGYFLnSz7t-GoO0oQ3apB6M8QDjS_rikAxZWc3STaJFbe8d1FFCwkp3DOna5uZMOeQFlU-j0UQekxts6BDnS9VPqZz2OU"/>
+<!-- Side Summary Card -->
+<aside class="lg:col-span-4 space-y-md">
+<div class="bg-primary p-md rounded-xl text-on-primary water-shadow">
+<h3 class="font-headline-md text-headline-md mb-md">Why PureAqua?</h3>
+<div class="space-y-md">
+<div class="flex items-start gap-4">
+<div class="bg-white/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-white" data-weight="fill">verified_user</span>
 </div>
-<div class="md:w-2/3 flex flex-col">
-<div class="flex justify-between items-start mb-2">
-<h3 class="font-headline-md text-headline-md text-primary">Commercial Supply</h3>
-<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Inquire</span>
-</div>
-<p class="text-on-surface-variant font-body-md text-body-md mb-4">High-volume solutions for industrial facilities and large-scale manufacturing sites requiring consistent purity.</p>
-<div class="grid grid-cols-2 gap-4 mb-6">
-<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant">
-<span class="material-symbols-outlined text-primary mb-1">precision_manufacturing</span>
-<p class="text-label-md font-label-md">High Capacity</p>
-</div>
-<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant">
-<span class="material-symbols-outlined text-primary mb-1">local_shipping</span>
-<p class="text-label-md font-label-md">Fleet Support</p>
+<div>
+<h4 class="font-label-md text-label-md font-bold">Professional Purity</h4>
+<p class="text-on-primary/80 font-body-md text-body-md">Clinical-grade Reverse Osmosis filtration systems.</p>
 </div>
 </div>
-<button class="bg-primary text-on-primary w-full py-3 rounded-xl font-bold hover:opacity-90 transition-all">
-                            Get Quote
-                        </button>
+<div class="flex items-start gap-4">
+<div class="bg-white/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-white" data-weight="fill">support_agent</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold">24/7 Support</h4>
+<p class="text-on-primary/80 font-body-md text-body-md">Dedicated account managers for corporate logistics.</p>
 </div>
 </div>
-<!-- Bulk Supply Solutions -->
-<div class="md:col-span-6 bg-white border border-outline-variant rounded-xl p-md flex flex-col md:flex-row gap-6 water-shadow">
-<div class="md:w-1/3 h-full min-h-[200px] rounded-lg overflow-hidden border border-outline-variant">
-<img class="w-full h-full object-cover" data-alt="A fleet of branded white and blue delivery trucks parked in a neat row outside a modern, clean logistics facility. The lighting is bright morning sun, casting soft shadows. The overall mood is one of systematic reliability and industrial efficiency. No people are present, focusing purely on the logistics and delivery capacity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuV8ZkYcbXMno2GQRq_DbfeRXy4-ut1rcy5sHb2YX6MqBYeS-FXRH5ophfgIKmT5D7gqquPj1Asx5Qgown7kA10_Du_OeSs0fGeMnUmaJ98RqYgBmn8WRBdB8_Q70hTxhZTvN78cJTCOWuN5CSxwQ9JKSjvAPZ8t6QqFKr0WxOY9H5SB8XvUK0ybZsDJ02V8N6mRqJHaPH9qsqH7AiS7TPio2My1Fy2_DxM6C3QU9uxaojZz3-0kq7Djcepjxy5yPeY0l5crnD9F8"/>
+<div class="flex items-start gap-4">
+<div class="bg-white/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-white" data-weight="fill">local_shipping</span>
 </div>
-<div class="md:w-2/3 flex flex-col">
-<div class="flex justify-between items-start mb-2">
-<h3 class="font-headline-md text-headline-md text-primary">Bulk Solutions</h3>
-<span class="bg-error-container text-on-error-container px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Out of Stock</span>
-</div>
-<p class="text-on-surface-variant font-body-md text-body-md mb-4">Specialized bulk delivery for events, construction sites, and seasonal spikes. Priority scheduling available.</p>
-<ul class="space-y-2 mb-6">
-<li class="flex items-center gap-2 text-label-md font-label-md text-on-surface-variant">
-<span class="material-symbols-outlined text-[18px] text-primary">event_available</span>
-                                Flexible Scheduling
-                            </li>
-<li class="flex items-center gap-2 text-label-md font-label-md text-on-surface-variant">
-<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
-                                Quality Certified
-                            </li>
-</ul>
-<button class="bg-surface-container-high text-on-surface-variant w-full py-3 rounded-xl font-bold cursor-not-allowed opacity-60">
-                            Notify Availability
-                        </button>
+<div>
+<h4 class="font-label-md text-label-md font-bold">Scheduled Logistics</h4>
+<p class="text-on-primary/80 font-body-md text-body-md">Timed delivery windows that never miss a beat.</p>
 </div>
 </div>
+</div>
+</div>
+<div class="bg-surface-container-high p-md rounded-xl border border-outline-variant">
+<h3 class="font-label-md text-label-md text-primary uppercase tracking-widest mb-sm">Our Facility</h3>
+<div class="rounded-lg overflow-hidden h-48 mb-md relative">
+<img class="w-full h-full object-cover" data-alt="A clean and modern industrial reverse osmosis water treatment facility with stainless steel pipes and high-tech monitoring equipment. The environment is sterile and brightly lit with cool blue and white tones, reflecting a clinical and professional atmosphere. No people are visible, focusing entirely on the precision engineering and hygiene of the water purification process." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsy7PsJBnDYtN0_bcQ9UaArRuErMuOByTMRPAetT1e_P0inFpSi2-WblQDT6GhffNwtgxmF40Hw15vsoPp3tB9_yjL4YRfwJkgStb0KvtCPojl_u_C72nBUzxB-TOUVR9SKqP4QiXcb-dxSM7lPKN150jt-f5FlaUPyjBpHs4VeYeYo5PqBLLReRhRkvEWT0FZYSGe23TwS1W5vqr73OER8TCQ7vWuSRJLbN5zv6Twn23mpddkNZGTnO3CV5c9pa4x4VbISr6CSVk"/>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md italic">
+                            "Systematic hydration for large-scale operations. We manage the supply, you focus on the growth."
+                        </p>
+</div>
+<!-- Trust Indicators -->
+<div class="flex flex-wrap gap-sm pt-4">
+<div class="bg-surface-variant px-3 py-1 rounded-full text-xs font-bold text-on-surface-variant border border-outline-variant">ISO 9001 CERTIFIED</div>
+<div class="bg-surface-variant px-3 py-1 rounded-full text-xs font-bold text-on-surface-variant border border-outline-variant">FDA APPROVED</div>
+</div>
+</aside>
 </div>
 </section>
-<!-- Feature Bento Section -->
-<section class="py-xl bg-surface-container-low">
-<div class="max-w-container-max mx-auto px-md md:px-lg">
-<div class="text-center mb-xl">
-<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Why Professional Entities Choose PureAqua</h2>
-<p class="max-w-xl mx-auto text-on-surface-variant">Our systematic approach ensures that every drop meets rigorous industrial standards for health and safety.</p>
+<!-- Map / Coverage Preview -->
+<section class="bg-surface-container-low py-xl">
+<div class="max-w-container-max mx-auto px-md md:px-lg text-center mb-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Our Coverage Network</h2>
+<p class="text-on-surface-variant font-body-md text-body-md">Real-time logistics across primary industrial zones.</p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<div class="bg-white p-lg rounded-xl border border-outline-variant hover:translate-y-[-4px] transition-transform">
-<span class="material-symbols-outlined text-primary text-[48px] mb-4">water_lux</span>
-<h4 class="font-headline-md text-headline-md mb-2">Clinical Purity</h4>
-<p class="text-on-surface-variant">Every batch undergoes rigorous 7-stage RO filtration and UV treatment before bottling.</p>
-</div>
-<div class="bg-white p-lg rounded-xl border border-outline-variant hover:translate-y-[-4px] transition-transform">
-<span class="material-symbols-outlined text-primary text-[48px] mb-4">history_toggle_off</span>
-<h4 class="font-headline-md text-headline-md mb-2">Timely Logistics</h4>
-<p class="text-on-surface-variant">Scheduled morning deliveries ensure your facility never runs dry. Guaranteed 24-hour response.</p>
-</div>
-<div class="bg-white p-lg rounded-xl border border-outline-variant hover:translate-y-[-4px] transition-transform">
-<span class="material-symbols-outlined text-primary text-[48px] mb-4">inventory</span>
-<h4 class="font-headline-md text-headline-md mb-2">Sealed Assurance</h4>
-<p class="text-on-surface-variant">Individually tamper-evident sealed bottles with batch numbers for complete traceability.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- CTA Section -->
-<section class="py-xl max-w-container-max mx-auto px-md md:px-lg">
-<div class="bg-primary rounded-xl p-xl flex flex-col md:flex-row items-center justify-between gap-8 water-shadow">
-<div class="text-center md:text-left">
-<h2 class="font-headline-lg text-headline-lg text-white mb-2">Ready for Premium Hydration?</h2>
-<p class="text-white/80 font-body-md text-body-md">Get a customized delivery plan for your organization today.</p>
-</div>
-<div class="flex flex-col sm:flex-row gap-4">
-<button class="bg-white text-primary px-8 py-4 rounded-xl font-bold hover:bg-surface-container-low transition-all">
-                        Request Quote
-                    </button>
-<button class="border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-all">
-                        View Process
-                    </button>
-</div>
+<div class="w-full h-[300px] grayscale contrast-125 opacity-70">
+<img class="w-full h-full object-cover" data-location="Dubai" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWNGDw5RUBI01ZMHaED2yo2xSmD7vfKgZxkrmt487jjVgmJXa_zw6VBM27bT6uXQDbvbgk-cg3NwS9_SdIM6Kc4jY3JxBqYy-zCnfSrF0-8YEXfsG5a4wkVQrmoLmLa9qFYbBJtpVzXe-Wbqcpc3-3qkeMMKUPlZZ9VahgYRrPNy0fUAgl_b0qMopCnk0tEqoKKB4S27kdFDj8JcI387359h223FvgR7i4GUU2urB3xaOBgoIxgPguUza7UdKcbmsQK6Ye0Mp6k0k"/>
 </div>
 </section>
 </main>
 <!-- Footer -->
 
-<!-- Simple Micro-interactions Script -->
 <script>
-        // Smooth scroll for nav links (if they were anchors)
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+        // Micro-interaction for form submission
+        document.getElementById('quote-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            const originalContent = btn.innerHTML;
+            
+            btn.disabled = true;
+            btn.innerHTML = `<span class="material-symbols-outlined animate-spin">sync</span> Processing Request...`;
+            
+            setTimeout(() => {
+                btn.innerHTML = `<span class="material-symbols-outlined">check_circle</span> Success! We'll call you shortly.`;
+                btn.classList.remove('bg-primary');
+                btn.classList.add('bg-on-secondary-fixed-variant');
+                this.reset();
+                
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.innerHTML = originalContent;
+                    btn.classList.add('bg-primary');
+                    btn.classList.remove('bg-on-secondary-fixed-variant');
+                }, 4000);
+            }, 1500);
         });
 
-        // Sticky header opacity change on scroll
+        // Header transparency scroll effect
         window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 20) {
-                header.classList.add('bg-white/95', 'backdrop-blur-sm');
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-xl', 'h-16');
+                header.classList.remove('h-20');
             } else {
-                header.classList.remove('bg-white/95', 'backdrop-blur-sm');
+                header.classList.remove('shadow-xl', 'h-16');
+                header.classList.add('h-20');
             }
         });
     </script>

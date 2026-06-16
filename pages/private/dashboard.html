@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Dashboard | PureAqua</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1c1b1b",
+                    "primary-container": "#0070ea",
+                    "inverse-primary": "#adc7ff",
+                    "surface": "#fcf9f8",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#eae7e7",
+                    "on-surface-variant": "#414754",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#e5e2e1",
+                    "on-primary-container": "#fefcff",
+                    "primary": "#0059bb",
+                    "on-tertiary-fixed": "#121d23",
+                    "inverse-on-surface": "#f3f0ef",
+                    "outline-variant": "#c1c6d7",
+                    "tertiary-fixed-dim": "#bcc8d1",
+                    "inverse-surface": "#313030",
+                    "surface-container-low": "#f6f3f2",
+                    "on-surface": "#1c1b1b",
+                    "surface-dim": "#dcd9d9",
+                    "on-secondary-fixed-variant": "#004491",
+                    "on-primary-fixed-variant": "#004493",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#001a41",
+                    "secondary-container": "#659dfe",
+                    "surface-container": "#f0eded",
+                    "secondary-fixed-dim": "#acc7ff",
+                    "surface-bright": "#fcf9f8",
+                    "tertiary": "#525e65",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#d8e4ed",
+                    "on-tertiary-container": "#fbfcff",
+                    "primary-fixed-dim": "#adc7ff",
+                    "secondary-fixed": "#d7e2ff",
+                    "surface-container-highest": "#e5e2e1",
+                    "surface-tint": "#005bc0",
+                    "tertiary-container": "#6a767e",
+                    "primary-fixed": "#d8e2ff",
+                    "background": "#fcf9f8",
+                    "outline": "#717786",
+                    "on-secondary-container": "#003370",
+                    "secondary": "#115cb9",
+                    "on-secondary-fixed": "#001a40",
+                    "on-tertiary-fixed-variant": "#3d484f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "md": "24px",
+                    "sm": "12px",
+                    "lg": "48px",
+                    "container-max": "1200px",
+                    "xs": "4px",
+                    "gutter": "24px",
+                    "xl": "80px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Work Sans"],
+                    "headline-md": ["Work Sans"],
+                    "body-lg": ["Work Sans"],
+                    "caption": ["Work Sans"],
+                    "headline-lg-mobile": ["Work Sans"],
+                    "label-md": ["Work Sans"],
+                    "headline-lg": ["Work Sans"],
+                    "body-md": ["Work Sans"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .water-shadow {
+        box-shadow: 0px 4px 20px rgba(0, 86, 179, 0.08);
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #fcf9f8;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #D1E9FF;
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Sidebar Navigation -->
+<aside class="fixed inset-y-0 left-0 z-[60] w-72 flex flex-col p-md bg-surface border-r border-outline-variant shadow-xl" id="side-nav">
+<div class="mb-xl px-4">
+<h1 class="text-headline-md font-headline-md font-bold text-primary">PureAqua</h1>
+<p class="text-label-md text-on-surface-variant">Admin Control Center</p>
+</div>
+<nav class="flex-grow space-y-2">
+<!-- Dashboard Active State -->
+<a class="flex items-center gap-4 bg-primary-container text-on-primary-container rounded-xl p-4 font-bold scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant p-4 hover:bg-surface-variant rounded-xl transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="orders">orders</span>
+<span class="font-label-md">Order Management</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant p-4 hover:bg-surface-variant rounded-xl transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="water_drop">water_drop</span>
+<span class="font-label-md">Product Management</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant p-4 hover:bg-surface-variant rounded-xl transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="local_shipping">local_shipping</span>
+<span class="font-label-md">Delivery Management</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant p-4 hover:bg-surface-variant rounded-xl transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary" data-icon="settings">settings</span>
+<span class="font-label-md">Settings</span>
+</a>
+</nav>
+<div class="mt-auto p-4 border-t border-outline-variant flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold">
+                AD
+            </div>
+<div>
+<p class="font-label-md text-on-surface">Admin User</p>
+<p class="text-caption text-on-surface-variant">System Administrator</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-72 min-h-screen">
+<!-- Top Bar -->
+<header class="h-20 px-lg bg-surface flex items-center justify-between border-b border-outline-variant sticky top-0 z-50">
+<h2 class="font-headline-md text-headline-md text-on-surface">Operations Overview</h2>
+<div class="flex items-center gap-gutter">
+<div class="relative group">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">notifications</span>
+<span class="absolute -top-1 -right-1 w-4 h-4 bg-error text-white text-[10px] rounded-full flex items-center justify-center">3</span>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-xl font-label-md water-shadow hover:opacity-90 transition-opacity">
+                    Generate Report
+                </button>
+</div>
+</header>
+<!-- Content Padding -->
+<div class="p-lg space-y-xl">
+<!-- Summary Statistics Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Stat Card 1 -->
+<div class="bg-white p-md border border-[#D1E9FF] rounded-xl water-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="shopping_cart">shopping_cart</span>
+</div>
+<span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded">+12%</span>
+</div>
+<p class="text-label-md text-on-surface-variant">Total Orders</p>
+<p class="text-headline-lg font-headline-lg text-primary">1,284</p>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-white p-md border border-[#D1E9FF] rounded-xl water-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="group">group</span>
+</div>
+<span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded">+5%</span>
+</div>
+<p class="text-label-md text-on-surface-variant">Total Customers</p>
+<p class="text-headline-lg font-headline-lg text-primary">842</p>
+</div>
+<!-- Stat Card 3 -->
+<div class="bg-white p-md border border-[#D1E9FF] rounded-xl water-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="pending_actions">pending_actions</span>
+</div>
+<span class="text-xs font-bold text-orange-600 bg-orange-50 px-2 py-1 rounded">24 New</span>
+</div>
+<p class="text-label-md text-on-surface-variant">Pending Deliveries</p>
+<p class="text-headline-lg font-headline-lg text-primary">43</p>
+</div>
+<!-- Stat Card 4 -->
+<div class="bg-white p-md border border-[#D1E9FF] rounded-xl water-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="inventory_2">inventory_2</span>
+</div>
+<span class="text-xs font-bold text-on-surface-variant bg-surface-container px-2 py-1 rounded">Full Stock</span>
+</div>
+<p class="text-label-md text-on-surface-variant">Products Available</p>
+<p class="text-headline-lg font-headline-lg text-primary">15</p>
+</div>
+</section>
+<!-- Main Dashboard Area (Table + Quick Actions) -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-gutter items-start">
+<!-- Recent Orders Table -->
+<div class="lg:col-span-2 bg-white border border-[#D1E9FF] rounded-xl water-shadow overflow-hidden">
+<div class="p-md border-b border-outline-variant flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface">Recent Orders</h3>
+<button class="text-primary font-label-md hover:underline">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-md">
+<th class="p-4 border-b border-outline-variant">Customer</th>
+<th class="p-4 border-b border-outline-variant">Phone &amp; Address</th>
+<th class="p-4 border-b border-outline-variant">Product</th>
+<th class="p-4 border-b border-outline-variant">Qty</th>
+<th class="p-4 border-b border-outline-variant">Status</th>
+</tr>
+</thead>
+<tbody class="text-body-md">
+<tr class="hover:bg-surface-container-lowest transition-colors border-b border-outline-variant">
+<td class="p-4 font-bold">Ahmad Al-Saeed</td>
+<td class="p-4">
+<div class="text-xs text-on-surface-variant">+971 50 123 4567</div>
+<div class="text-xs truncate max-w-[150px]">Building 4, Downtown Tech District</div>
+</td>
+<td class="p-4 text-sm">19L Mineral Water</td>
+<td class="p-4 text-center font-bold">10</td>
+<td class="p-4">
+<span class="px-3 py-1 bg-orange-100 text-orange-700 text-xs font-bold rounded-full">Pending</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors border-b border-outline-variant">
+<td class="p-4 font-bold">Industrial Logistics Hub</td>
+<td class="p-4">
+<div class="text-xs text-on-surface-variant">+971 52 987 6543</div>
+<div class="text-xs truncate max-w-[150px]">Warehouse 12, Port Zone C</div>
+</td>
+<td class="p-4 text-sm">RO Purified (Dispenser)</td>
+<td class="p-4 text-center font-bold">25</td>
+<td class="p-4">
+<span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">Delivered</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors border-b border-outline-variant">
+<td class="p-4 font-bold">Zayed Commercial Plaza</td>
+<td class="p-4">
+<div class="text-xs text-on-surface-variant">+971 55 555 0199</div>
+<div class="text-xs truncate max-w-[150px]">Office 203, Sheikh Zayed Road</div>
+</td>
+<td class="p-4 text-sm">Distilled Pure 5L</td>
+<td class="p-4 text-center font-bold">5</td>
+<td class="p-4">
+<span class="px-3 py-1 bg-orange-100 text-orange-700 text-xs font-bold rounded-full">Pending</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors border-b border-outline-variant">
+<td class="p-4 font-bold">Oasis Property Management</td>
+<td class="p-4">
+<div class="text-xs text-on-surface-variant">+971 4 800 2211</div>
+<div class="text-xs truncate max-w-[150px]">Tower B Reception, JLT Cluster J</div>
+</td>
+<td class="p-4 text-sm">19L Mineral Water</td>
+<td class="p-4 text-center font-bold">40</td>
+<td class="p-4">
+<span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">Delivered</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Right Sidebar / Fleet Status -->
+<div class="space-y-gutter">
+<div class="bg-white border border-[#D1E9FF] rounded-xl water-shadow p-md">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Delivery Map</h3>
+<div class="h-48 bg-surface-container rounded-lg overflow-hidden relative border border-outline-variant">
+<img class="w-full h-full object-cover grayscale contrast-125" data-alt="A clean, minimalist digital map interface showing a professional logistics network across a modern city layout. The map is styled with light blues and whites, highlighting delivery route lines and vehicle icons. It conveys a sense of high-technology industrial tracking and urban fleet efficiency in a corporate light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqiG3SKGkNV8XYwPEILHSIKbwbBQg-e7mhAW3tpi4WBPOOZ5mZYNmZD_NOb1vrdlMOuaplAOhTwjxmTrX5jqA8XZ9lJMGK75IMStr3bCv6d3htS5EbdbBwhK3Zcq5s8l2ZfhmPDTf1QSww3ugReNUSzHnw6WDnMTKEzF8mTBdoRKkWUobAP8WXqzM6hw_2d6DCMsHTitAsCHxsExq1KCm34_Eyt5skGnw1VNMahgZ1oxyAhxGFB1E3WoNS4GcaSmDZ5NADHFoY9xw"/>
+<div class="absolute inset-0 bg-primary/5"></div>
+<div class="absolute bottom-4 left-4 bg-white px-3 py-1 rounded shadow-sm text-xs font-bold">Live Tracking Active</div>
+</div>
+</div>
+<div class="bg-white border border-[#D1E9FF] rounded-xl water-shadow p-md">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Stock Highlights</h3>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-label-md mb-1">
+<span>19L Bottles</span>
+<span class="text-primary font-bold">85%</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[85%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-label-md mb-1">
+<span>Purification Filters</span>
+<span class="text-error font-bold">12%</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-error h-full w-[12%]"></div>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-3 border-2 border-primary text-primary font-bold rounded-xl hover:bg-primary/5 transition-colors">
+                            Restock Inventory
+                        </button>
+</div>
+</div>
+</section>
+<!-- Production Plant Visual (Professional Detail) -->
+<section class="relative h-[400px] rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover brightness-75 group-hover:scale-105 transition-transform duration-700" data-alt="A sophisticated industrial reverse osmosis water purification plant featuring gleaming stainless steel pipes, advanced digital pressure gauges, and high-tech filtration tanks. The facility is immaculately clean with bright overhead white lighting, reflecting a sterile, laboratory-grade environment. The composition is focused on the precision engineering and technological infrastructure of the RO process." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcoWqs9uMUQCnMtJHe4czfz7cAMsjoByjOPL6TCAHvRQ-no2PPYe-jVt9wDPoyn_s6HB3PWVvlDx9grTajsTm9WgC-kqVpwlPzArbHpC7iCfHCz87tZ2vjEKkA6EpjSimcBz2O_Kqyol-vUhctS_luZ8BpIWAA82wMyYKNQc8yYZ_G7-JRXbQ50ZfaUzSYGXb4mmveJya_jT_UgwcBm1fQyvAMb82sZ1rDVUAhTm2fhoB-ZIh8j5Z1l8GJXY0jdpCUheCB_pj4vUg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-lg">
+<h2 class="text-headline-lg font-headline-lg text-white mb-2">Plant Performance: Optimal</h2>
+<p class="text-body-lg text-white/90 max-w-2xl">The PureAqua central facility is operating at 98.4% efficiency. All filtration stages maintain surgical-grade purity standards with real-time digital monitoring.</p>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<footer class="w-full py-md px-lg border-t border-outline-variant bg-surface flex flex-col md:flex-row justify-between items-center text-on-surface-variant gap-4">
+<p class="text-caption">© 2024 PureAqua Water Delivery. System Version 4.2.1-Gold</p>
+<div class="flex gap-gutter font-label-md">
+<a class="hover:text-primary transition-colors" href="#">Support Portal</a>
+<a class="hover:text-primary transition-colors" href="#">Privacy Protocol</a>
+<a class="hover:text-primary transition-colors" href="#">Audit Logs</a>
+</div>
+</footer>
+</main>
+<!-- Micro-interaction Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Logic for navigation active states
+            const navLinks = document.querySelectorAll('aside nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    navLinks.forEach(l => {
+                        l.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-bold', 'scale-95');
+                        l.classList.add('text-on-surface-variant', 'hover:bg-surface-variant');
+                    });
+                    link.classList.add('bg-primary-container', 'text-on-primary-container', 'font-bold', 'scale-95');
+                    link.classList.remove('text-on-surface-variant', 'hover:bg-surface-variant');
+                });
+            });
+
+            // Smooth entrance for stat cards
+            const cards = document.querySelectorAll('.grid > div');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease-out';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Login | PureAqua</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1c1b1b",
+                    "primary-container": "#0070ea",
+                    "inverse-primary": "#adc7ff",
+                    "surface": "#fcf9f8",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#eae7e7",
+                    "on-surface-variant": "#414754",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#e5e2e1",
+                    "on-primary-container": "#fefcff",
+                    "primary": "#0059bb",
+                    "on-tertiary-fixed": "#121d23",
+                    "inverse-on-surface": "#f3f0ef",
+                    "outline-variant": "#c1c6d7",
+                    "tertiary-fixed-dim": "#bcc8d1",
+                    "inverse-surface": "#313030",
+                    "surface-container-low": "#f6f3f2",
+                    "on-surface": "#1c1b1b",
+                    "surface-dim": "#dcd9d9",
+                    "on-secondary-fixed-variant": "#004491",
+                    "on-primary-fixed-variant": "#004493",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#001a41",
+                    "secondary-container": "#659dfe",
+                    "surface-container": "#f0eded",
+                    "secondary-fixed-dim": "#acc7ff",
+                    "surface-bright": "#fcf9f8",
+                    "tertiary": "#525e65",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#d8e4ed",
+                    "on-tertiary-container": "#fbfcff",
+                    "primary-fixed-dim": "#adc7ff",
+                    "secondary-fixed": "#d7e2ff",
+                    "surface-container-highest": "#e5e2e1",
+                    "surface-tint": "#005bc0",
+                    "tertiary-container": "#6a767e",
+                    "primary-fixed": "#d8e2ff",
+                    "background": "#fcf9f8",
+                    "outline": "#717786",
+                    "on-secondary-container": "#003370",
+                    "secondary": "#115cb9",
+                    "on-secondary-fixed": "#001a40",
+                    "on-tertiary-fixed-variant": "#3d484f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "md": "24px",
+                    "sm": "12px",
+                    "lg": "48px",
+                    "container-max": "1200px",
+                    "xs": "4px",
+                    "gutter": "24px",
+                    "xl": "80px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Work Sans"],
+                    "headline-md": ["Work Sans"],
+                    "body-lg": ["Work Sans"],
+                    "caption": ["Work Sans"],
+                    "headline-lg-mobile": ["Work Sans"],
+                    "label-md": ["Work Sans"],
+                    "headline-lg": ["Work Sans"],
+                    "body-md": ["Work Sans"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #EAF6FF; /* Tonal Layering Base */
+        }
+        .water-shadow {
+            box-shadow: 0px 4px 20px rgba(0, 86, 179, 0.08);
+        }
+        .sterile-border {
+            border: 1px solid #D1E9FF;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center font-body-md text-on-background p-md">
+<!-- Background Subtle Atmospheric Element -->
+<div class="fixed inset-0 overflow-hidden pointer-events-none opacity-20">
+<div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-primary rounded-full blur-[120px]"></div>
+<div class="absolute -bottom-[10%] -right-[10%] w-[30%] h-[30%] bg-secondary rounded-full blur-[100px]"></div>
+</div>
+<!-- Main Content Canvas -->
+<main class="relative w-full max-w-md animate-fade-in">
+<!-- Login Card -->
+<div class="bg-surface-container-lowest sterile-border rounded-xl p-xl water-shadow flex flex-col gap-lg">
+<!-- Branding Header -->
+<div class="flex flex-col items-center gap-base text-center">
+<div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-base">
+<span class="material-symbols-outlined text-on-primary text-[32px]" data-icon="water_drop">water_drop</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary">PureAqua</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">ADMINISTRATOR ACCESS</p>
+</div>
+<!-- Form -->
+<form action="#" class="flex flex-col gap-md" onsubmit="return false;">
+<!-- Email Field -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1" for="email">Email Address</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors" data-icon="mail">mail</span>
+<input class="w-full pl-12 pr-4 py-3 rounded-xl sterile-border bg-surface-container-low text-body-md focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none placeholder:text-outline" id="email" name="email" placeholder="admin@purestream.com" required="" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-xs">
+<div class="flex justify-between items-center px-1">
+<label class="font-label-md text-label-md text-on-surface-variant" for="password">Password</label>
+<a class="font-label-md text-label-md text-primary hover:underline transition-all" href="#">Forgot Password?</a>
+</div>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors" data-icon="lock">lock</span>
+<input class="w-full pl-12 pr-12 py-3 rounded-xl sterile-border bg-surface-container-low text-body-md focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none placeholder:text-outline" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary" onclick="togglePassword()" type="button">
+<span class="material-symbols-outlined" data-icon="visibility" id="eye-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Login Button -->
+<button class="mt-base bg-primary text-on-primary font-label-md text-label-md py-4 rounded-xl water-shadow hover:bg-primary-container active:scale-[0.98] transition-all flex items-center justify-center gap-2 group" type="submit">
+                    Secure Login
+                    <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+<!-- Bottom Disclaimer -->
+<div class="pt-md border-t border-outline-variant flex flex-col items-center gap-base">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="verified_user">verified_user</span>
+<span class="font-caption text-caption">End-to-End Encrypted Session</span>
+</div>
+<p class="font-caption text-caption text-outline text-center">
+                    Authorized personnel only. Access is monitored and logged for security compliance.
+                </p>
+</div>
+</div>
+<!-- Secondary Links -->
+<div class="mt-md text-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary flex items-center justify-center gap-2 transition-colors" href="/">
+<span class="material-symbols-outlined text-[18px]" data-icon="west">west</span>
+                Back to Public Portal
+            </a>
+</div>
+</main>
+<script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eye-icon');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.innerText = 'visibility_off';
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.innerText = 'visibility';
+            }
+        }
+
+        // Simple button active state simulation
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.addEventListener('mousedown', () => button.classList.add('opacity-80'));
+            button.addEventListener('mouseup', () => button.classList.remove('opacity-80'));
+            button.addEventListener('mouseleave', () => button.classList.remove('opacity-80'));
+        });
+    </script>
+<!-- Background Industrial Asset Shadow for Aesthetic -->
+<div class="fixed bottom-0 left-0 p-lg opacity-10 pointer-events-none hidden md:block">
+<span class="material-symbols-outlined text-[240px] text-primary" data-icon="precision_manufacturing">precision_manufacturing</span>
+</div>
+</body></html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RO Process | PureAqua</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1c1b1b",
+                        "primary-container": "#0070ea",
+                        "inverse-primary": "#adc7ff",
+                        "surface": "#fcf9f8",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#eae7e7",
+                        "on-surface-variant": "#414754",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#e5e2e1",
+                        "on-primary-container": "#fefcff",
+                        "primary": "#0059bb",
+                        "on-tertiary-fixed": "#121d23",
+                        "inverse-on-surface": "#f3f0ef",
+                        "outline-variant": "#c1c6d7",
+                        "tertiary-fixed-dim": "#bcc8d1",
+                        "inverse-surface": "#313030",
+                        "surface-container-low": "#f6f3f2",
+                        "on-surface": "#1c1b1b",
+                        "surface-dim": "#dcd9d9",
+                        "on-secondary-fixed-variant": "#004491",
+                        "on-primary-fixed-variant": "#004493",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#001a41",
+                        "secondary-container": "#659dfe",
+                        "surface-container": "#f0eded",
+                        "secondary-fixed-dim": "#acc7ff",
+                        "surface-bright": "#fcf9f8",
+                        "tertiary": "#525e65",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#d8e4ed",
+                        "on-tertiary-container": "#fbfcff",
+                        "primary-fixed-dim": "#adc7ff",
+                        "secondary-fixed": "#d7e2ff",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-tint": "#005bc0",
+                        "tertiary-container": "#6a767e",
+                        "primary-fixed": "#d8e2ff",
+                        "background": "#fcf9f8",
+                        "outline": "#717786",
+                        "on-secondary-container": "#003370",
+                        "secondary": "#115cb9",
+                        "on-secondary-fixed": "#001a40",
+                        "on-tertiary-fixed-variant": "#3d484f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "sm": "12px",
+                        "lg": "48px",
+                        "container-max": "1200px",
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "xl": "80px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Work Sans"],
+                        "headline-md": ["Work Sans"],
+                        "body-lg": ["Work Sans"],
+                        "caption": ["Work Sans"],
+                        "headline-lg-mobile": ["Work Sans"],
+                        "label-md": ["Work Sans"],
+                        "headline-lg": ["Work Sans"],
+                        "body-md": ["Work Sans"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .water-shadow {
+            box-shadow: 0px 4px 20px rgba(0, 86, 179, 0.08);
+        }
+        .step-connector::after {
+            content: '';
+            position: absolute;
+            background-color: #D1E9FF;
+            z-index: 0;
+        }
+        @media (min-width: 768px) {
+            .step-connector::after {
+                width: 2px;
+                height: 100%;
+                left: 50%;
+                top: 2rem;
+            }
+            .step-item:last-child .step-connector::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface overflow-x-hidden font-body-md">
+<header class="sticky top-0 z-50 flex justify-between items-center h-20 px-md md:px-lg w-full max-w-container-max mx-auto bg-surface border-b border-outline-variant shadow-sm transition-all duration-300">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="water_drop">water_drop</span>
+<span class="text-headline-md font-headline-md font-bold text-primary">PureAqua</span>
+</div>
+<nav class="hidden md:flex items-center gap-3">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="pages/public/about.html">About</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="pages/public/services.html">Services</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="pages/public/products.html">Products</a>
+<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1" href="pages/public/process.html">Process</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="pages/public/faq.html">FAQ</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="pages/public/contact.html">Contact</a>
+</nav>
+<a class="bg-primary text-on-primary px-6 py-2 rounded-xl font-label-md text-label-md hover:opacity-90 transition-all shadow-sm" href="pages/public/quote.html">Get Quote</a>
+<button id="menuBtn" class="md:hidden text-on-surface-variant hover:text-primary p-2">
+  <span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</nav>
+<!-- Mobile Sidebar -->
+<div id="mobileSidebar" class="fixed inset-0 z-50 invisible md:hidden">
+  <div id="sidebarBackdrop" class="fixed inset-0 bg-black/40 opacity-0 transition-opacity duration-300"></div>
+  <div id="sidebarPanel" class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+    <div class="flex items-center justify-between px-6 h-20 border-b border-outline-variant/20">
+      <span class="text-title-md font-display-lg font-bold text-primary">PureAqua</span>
+      <button id="closeSidebar" class="text-on-surface-variant hover:text-primary p-2">
+        <span class="material-symbols-outlined text-3xl">close</span>
+      </button>
+    </div>
+    <nav class="flex-1 overflow-y-auto p-6 space-y-1">
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="index.html">Home</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="pages/public/about.html">About</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="pages/public/services.html">Services</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="pages/public/products.html">Products</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="pages/public/process.html">RO Process</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="pages/public/delivery-areas.html">Delivery Areas</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="pages/public/faq.html">FAQ</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="pages/public/gallery.html">Gallery</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="pages/public/reviews.html">Reviews</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="pages/public/contact.html">Contact</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="pages/public/careers.html">Careers</a>
+      <hr class="border-outline-variant/20 my-4">
+      <a class="flex items-center justify-center gap-2 bg-primary text-white py-3 px-6 rounded-full font-bold hover:bg-primary-container transition-colors" href="pages/public/quote.html">
+        <span class="material-symbols-outlined">shopping_cart</span>
+        Get Quote
+      </a>
+    </nav>
+  </div>
+</div>
+
+</header>
+
+<!-- TopNavBar -->
+
+<main>
+<!-- Hero Section -->
+<section class="relative h-[614px] flex items-center overflow-hidden bg-primary">
+<img class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-40" data-alt="A wide-angle, high-resolution shot of a state-of-the-art industrial reverse osmosis water purification plant. The facility features shiny stainless steel pipes, blue pressure vessels, and digital control panels in a bright, clinical, and impeccably clean environment. The lighting is cold and bright, emphasizing the sterile and high-tech atmosphere of the industrial process. No people are present, focusing entirely on the precision engineering and hygiene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEsFDEeqgYcPBB-fi0skKvvL0upK1tHHlNsjsHotRegYSp8SwuhkrlQQ5TH9ZcJln46tNU96AFaBUKK_q43qryFoGMOTkgiJj8fQtp9E6FtcFYFbfQ7wrStghx3P0fXGzIqVHyR-bQtorX3HDwkxZOe0HSIQH_NnBPz14C-AfOBYs5WoUK7qy6Ff-Atl6XCHfPmi8f6AlwjBfUggyg6RTEUsYJqzFfbEBh0pQxuKYNXyhu4ZZPRRM8pVjU1iRWCnIQ-rKvOlbJbK8"/>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-md md:px-lg">
+<div class="max-w-2xl">
+<h1 class="font-display-lg text-display-lg text-on-primary mb-md">Our Purification Process</h1>
+<p class="font-body-lg text-body-lg text-on-primary/90">Experience the clinical precision of our 8-stage industrial purification system, designed to deliver water of uncompromising purity to your doorstep.</p>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="py-xl bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-md md:px-lg">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-sm">The 8 Stages of Purity</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto">Every drop of PureAqua water undergoes a rigorous systematic treatment to ensure medical-grade hygiene and consistency.</p>
+</div>
+<!-- Vertical Process Flow for Mobile / Alternating for Desktop -->
+<div class="relative space-y-xl md:space-y-0">
+<!-- Step 1 -->
+<div class="step-item relative flex flex-col md:flex-row items-center gap-lg md:h-[400px]">
+<div class="w-full md:w-1/2 flex justify-center md:justify-end order-2 md:order-1">
+<div class="max-w-md bg-white p-lg rounded-xl border border-outline-variant water-shadow">
+<div class="flex items-center gap-4 mb-4">
+<span class="bg-primary-container text-on-primary-container w-10 h-10 rounded-full flex items-center justify-center font-bold">1</span>
+<h3 class="font-headline-md text-headline-md">Water Collection</h3>
+</div>
+<p class="text-on-surface-variant font-body-md mb-4">Raw water is sourced from protected deep-well systems, ensuring a consistent starting profile free from surface pollutants and industrial runoff.</p>
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined" data-icon="water_drop">water_drop</span>
+<span class="font-label-md">Raw Sourcing</span>
+</div>
+</div>
+</div>
+<div class="step-connector hidden md:flex items-center justify-center w-16 h-16 bg-primary text-on-primary rounded-full z-10 font-bold border-4 border-surface shadow-md">
+<span class="material-symbols-outlined" data-icon="water_source">frame_source</span>
+</div>
+<div class="w-full md:w-1/2 order-1 md:order-3">
+<img class="w-full h-64 md:h-80 object-cover rounded-xl border border-outline-variant" data-alt="Close-up of a high-pressure industrial water intake valve connected to large blue steel pipes. The setting is a brightly lit, clean mechanical room with white walls and a polished floor. The image conveys heavy-duty engineering and the start of a systematic purification journey. No people or extraneous elements, just the focus on clean industrial design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2N0rxmDVNilnr3lrH17mSsWZgx-Hpi_D2MLXKSn-7biL8Z7Zl8NP5PCyW_pbHy0JtkICfo7h9qWqn60kixKCk7Jduz6wNriQwVZ5oKddigmotTZCozc9xFPykQsKvA9OdXmSuJE64dGeFE3guejqlXg0AqX0Lx_YzqtQjC9v2cn5rEYMvYg86T60ShTWDFGD2y2RHEr03tdWv1TQ34fnq2VF1DOF5BkprMuactIdXYpZlM3ukCzpct1vrxRd0hOfjunsNtiIAGOo"/>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="step-item relative flex flex-col md:flex-row items-center gap-lg md:h-[400px]">
+<div class="w-full md:w-1/2 order-1">
+<img class="w-full h-64 md:h-80 object-cover rounded-xl border border-outline-variant" data-alt="Industrial sediment filtration housing units standing tall in a row. These large white cylindrical vessels are connected by intricate stainless steel plumbing. The lighting is crisp, highlighting the textures of the industrial components. The image reinforces the theme of clinical hygiene and systematic multi-stage filtering in a modern factory setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5g5HL7R-uaa1cV0Vf3OwjGIg-fgvijdGLdqrmNcd2tUcuU2sCtMqORhpUCJjgUCAva_EZuan3roOIBpvABFPYZM-ZYvomAukGtJo8T7mojC3fWPTUI3tcwA36M28zft2CQ8R4U3L7Y6X8OThY4acxzcHc6QIR0YdncNv-nj0yrk0HYb7srPwtWRjzajufDb-BsclZMBMQMMuNrsxN2X01uujbLvV2_lJJBRyDlhcatKugyxhL3JNLtEaPXXsXMIzef6I6XVPIVWk"/>
+</div>
+<div class="step-connector hidden md:flex items-center justify-center w-16 h-16 bg-primary text-on-primary rounded-full z-10 font-bold border-4 border-surface shadow-md">
+<span class="material-symbols-outlined" data-icon="filter_alt">filter_alt</span>
+</div>
+<div class="w-full md:w-1/2 flex justify-center md:justify-start order-2">
+<div class="max-w-md bg-white p-lg rounded-xl border border-outline-variant water-shadow">
+<div class="flex items-center gap-4 mb-4">
+<span class="bg-primary-container text-on-primary-container w-10 h-10 rounded-full flex items-center justify-center font-bold">2</span>
+<h3 class="font-headline-md text-headline-md">Sediment Filtration</h3>
+</div>
+<p class="text-on-surface-variant font-body-md mb-4">A multi-layered 5-micron filter removes visible particles, sand, silt, and rust, protecting the sensitive membranes in later stages.</p>
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-label-md">Particle Removal</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="step-item relative flex flex-col md:flex-row items-center gap-lg md:h-[400px]">
+<div class="w-full md:w-1/2 flex justify-center md:justify-end order-2 md:order-1">
+<div class="max-w-md bg-white p-lg rounded-xl border border-outline-variant water-shadow">
+<div class="flex items-center gap-4 mb-4">
+<span class="bg-primary-container text-on-primary-container w-10 h-10 rounded-full flex items-center justify-center font-bold">3</span>
+<h3 class="font-headline-md text-headline-md">Carbon Filtration</h3>
+</div>
+<p class="text-on-surface-variant font-body-md mb-4">Activated carbon blocks eliminate chlorine, organic compounds, and odors, significantly improving the taste and chemical safety of the water.</p>
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined" data-icon="opacity">opacity</span>
+<span class="font-label-md">Chemical Neutralization</span>
+</div>
+</div>
+</div>
+<div class="step-connector hidden md:flex items-center justify-center w-16 h-16 bg-primary text-on-primary rounded-full z-10 font-bold border-4 border-surface shadow-md">
+<span class="material-symbols-outlined" data-icon="cleaning_services">cleaning_services</span>
+</div>
+<div class="w-full md:w-1/2 order-1 md:order-3">
+<img class="w-full h-64 md:h-80 object-cover rounded-xl border border-outline-variant" data-alt="Detailed view of industrial carbon filter cartridges arranged precisely within a transparent housing. The water inside looks exceptionally clear. The environment is a professional industrial plant with high-key lighting, maintaining the blue and white professional color palette. The focus is on the technology of purification." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlAt-BMly_i9YlXIxMdjXboIQawx0juiwgN5bk3h0qBlXp26-cyA0q71dDnX-_-mf8j5c9XmnoBbDCS0kPGRvDCkGU0U7Q2-_lXOe6G0DvhS2ZXbmfTv_7pdwXUCjsHO9He4IxDnA0lfsEpyKH6QMqepUZkLkfubasSpG1jEFXKE8zhlGy586KN48X6YEL4GjJZawq05ORWMsyqwFmgMrwnRDkmTtwTm2x4CVCfhh-uIXBCmn-DAYzRqcesslrLGBQZ1sGENVymoc"/>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="step-item relative flex flex-col md:flex-row items-center gap-lg md:h-[400px]">
+<div class="w-full md:w-1/2 order-1">
+<img class="w-full h-64 md:h-80 object-cover rounded-xl border border-outline-variant" data-alt="A row of heavy-duty reverse osmosis membrane housings made of high-grade fiberglass or stainless steel. The setup is complex with multiple pressure gauges and high-pressure pumps in the background. The scene is bright and clinical, emphasizing industrial efficiency and medical-grade purity standards. The color scheme is dominated by white and shades of corporate blue." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW8MI-oH_HqocuvdbZ_l1R5dwKZREkUZ3Z1lhV-euDfZwMhbxiM-5CH21OVpUnylIp0Ldn3-mCUtNroasX7fQ1xns4_LYrOPGbIUf64zZvNzyMPDpN1qDA2Ehhzda9iIBJqo3z5O-VtarHJuSZAOOLVcYin01VbaICwdylIWjfTBLwhlpKrVLwjZANgqzVYc9FfLGU7qNm91DYvNdH3qruyTp3CeojrndZTh5uCvK7_NtQH8dQOQtJWmnreVa-yGqDT4_0mvcM46Q"/>
+</div>
+<div class="step-connector hidden md:flex items-center justify-center w-16 h-16 bg-primary text-on-primary rounded-full z-10 font-bold border-4 border-surface shadow-md">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+</div>
+<div class="w-full md:w-1/2 flex justify-center md:justify-start order-2">
+<div class="max-w-md bg-white p-lg rounded-xl border border-outline-variant water-shadow">
+<div class="flex items-center gap-4 mb-4">
+<span class="bg-primary-container text-on-primary-container w-10 h-10 rounded-full flex items-center justify-center font-bold">4</span>
+<h3 class="font-headline-md text-headline-md">RO Purification</h3>
+</div>
+<p class="text-on-surface-variant font-body-md mb-4">The heart of our system. High-pressure membranes force water through microscopic pores, removing 99.9% of dissolved solids and bacteria.</p>
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined" data-icon="biotech">biotech</span>
+<span class="font-label-md">Molecular Filtration</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="step-item relative flex flex-col md:flex-row items-center gap-lg md:h-[400px]">
+<div class="w-full md:w-1/2 flex justify-center md:justify-end order-2 md:order-1">
+<div class="max-w-md bg-white p-lg rounded-xl border border-outline-variant water-shadow">
+<div class="flex items-center gap-4 mb-4">
+<span class="bg-primary-container text-on-primary-container w-10 h-10 rounded-full flex items-center justify-center font-bold">5</span>
+<h3 class="font-headline-md text-headline-md">UV Sterilization</h3>
+</div>
+<p class="text-on-surface-variant font-body-md mb-4">Intense Ultraviolet light treatment serves as a final biological barrier, destroying the DNA of any remaining microbes without chemicals.</p>
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined" data-icon="light_mode">light_mode</span>
+<span class="font-label-md">Germicidal Protection</span>
+</div>
+</div>
+</div>
+<div class="step-connector hidden md:flex items-center justify-center w-16 h-16 bg-primary text-on-primary rounded-full z-10 font-bold border-4 border-surface shadow-md">
+<span class="material-symbols-outlined" data-icon="sanitizer">sanitizer</span>
+</div>
+<div class="w-full md:w-1/2 order-1 md:order-3">
+<img class="w-full h-64 md:h-80 object-cover rounded-xl border border-outline-variant" data-alt="A specialized ultraviolet sterilization chamber glowing with a soft blue neon light. The chamber is part of a larger stainless steel piping network. The visual is high-tech and sci-fi in its cleanliness, emphasizing the futuristic and effective nature of UV sterilization. The overall atmosphere is professional, sterile, and focused on pure water technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCehhlcNyiaoRzAyjwxe-kCjo8eAxi5r48IYYymZlujm6nErVIAX6_V9M4BWXykgg06hPQo57puGJUyBP6KmlUrIRI-FSsLLZ7WuZWXjUjLwNa5rLCYTiYIq7Gy2dqWtI6xYwDplsMOcRjtp1mXiJ2nHXecnZxrToI5_YlzupgIwdcPxEbPamna6cS85_WsYnCSaUkDcexmmBzqpHuiWAOqqIJb9dakaoRVbxUBin7bFvXytoRutp0_h_Ynn78lKtBlAC3hLNxYCdg"/>
+</div>
+</div>
+<!-- Step 6 -->
+<div class="step-item relative flex flex-col md:flex-row items-center gap-lg md:h-[400px]">
+<div class="w-full md:w-1/2 order-1">
+<img class="w-full h-64 md:h-80 object-cover rounded-xl border border-outline-variant" data-alt="A modern industrial laboratory setting where a water sample is being tested in a glass beaker using a digital probe. The lab is exceptionally clean with white countertops and bright lighting. Various technical measuring instruments are visible in the background. The image represents rigorous quality control and scientific verification of water purity. No people are visible." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjKP9GU_BEqgdgzO8AHkkXHVOKBOpvgz_JQ7gTMfSYTbnNocsH3ZFkPPX-gsozi1LBLCxdcPpbIE4O9nKC2_N48EOlwwJIzhyqCMu07fJ9UMtpEheXRc0N_oRgiSgCtGm9pzB2C5tlnwtzwNznudQG1s7DzLLcpe3AA9tpZh0YTSDLD_saZrVfmp_jOL6MN_ozZ82ON9BDUJ2qCISsD-UJ4EkGdfd_vpZZo_oqq-zpAlguMnC4Y9gxjw7v8tss2wYpxHRuzRBLPL4"/>
+</div>
+<div class="step-connector hidden md:flex items-center justify-center w-16 h-16 bg-primary text-on-primary rounded-full z-10 font-bold border-4 border-surface shadow-md">
+<span class="material-symbols-outlined" data-icon="fact_check">fact_check</span>
+</div>
+<div class="w-full md:w-1/2 flex justify-center md:justify-start order-2">
+<div class="max-w-md bg-white p-lg rounded-xl border border-outline-variant water-shadow">
+<div class="flex items-center gap-4 mb-4">
+<span class="bg-primary-container text-on-primary-container w-10 h-10 rounded-full flex items-center justify-center font-bold">6</span>
+<h3 class="font-headline-md text-headline-md">Quality Testing</h3>
+</div>
+<p class="text-on-surface-variant font-body-md mb-4">Real-time TDS monitoring and hourly laboratory sampling ensure that every batch meets our strict corporate purity standards.</p>
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined" data-icon="science">science</span>
+<span class="font-label-md">Certified Standards</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 7 -->
+<div class="step-item relative flex flex-col md:flex-row items-center gap-lg md:h-[400px]">
+<div class="w-full md:w-1/2 flex justify-center md:justify-end order-2 md:order-1">
+<div class="max-w-md bg-white p-lg rounded-xl border border-outline-variant water-shadow">
+<div class="flex items-center gap-4 mb-4">
+<span class="bg-primary-container text-on-primary-container w-10 h-10 rounded-full flex items-center justify-center font-bold">7</span>
+<h3 class="font-headline-md text-headline-md">Packaging</h3>
+</div>
+<p class="text-on-surface-variant font-body-md mb-4">Bottling takes place in a HEPA-filtered cleanroom. 19L carboys are sanitized, filled, and hermetically sealed automatically.</p>
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-md">Sterile Filling</span>
+</div>
+</div>
+</div>
+<div class="step-connector hidden md:flex items-center justify-center w-16 h-16 bg-primary text-on-primary rounded-full z-10 font-bold border-4 border-surface shadow-md">
+<span class="material-symbols-outlined" data-icon="package">package</span>
+</div>
+<div class="w-full md:w-1/2 order-1 md:order-3">
+<img class="w-full h-64 md:h-80 object-cover rounded-xl border border-outline-variant" data-alt="An automated bottling line where large 19-liter blue water carboys are being filled and capped. The machinery is made of high-quality stainless steel and is impeccably clean. The factory floor is polished and free of any debris. The scene conveys efficient, high-volume industrial production with a focus on hygiene and precision. No people are in the frame." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLL68mThcVam_Tqf6_Ndzx6ZlolF_-6lZRr5JpigOo57mAT2XmivoJjix9GPFWzrEK1DmA1XB6kqHrcDV7zyTj7VoVyA64TqyI68H0WTeDfD9I7vtjUhX4cut68mwCbjnz625LlzzaExUlQNfxN28brFhhA5oWZxv4eJWJhhkYsnN-P4neD0z5gQt3pVVt6k5z-pD7Z0E34eMX3LvnQ7CTldTJJvV7E56pjMHHsfVREjkq5jDaSdlaF5BlY8vVhVEfePNzSLodmaQ"/>
+</div>
+</div>
+<!-- Step 8 -->
+<div class="step-item relative flex flex-col md:flex-row items-center gap-lg md:h-[400px]">
+<div class="w-full md:w-1/2 order-1">
+<img class="w-full h-64 md:h-80 object-cover rounded-xl border border-outline-variant" data-alt="A fleet of modern, branded white delivery vans parked in a neatly organized row outside a clean industrial warehouse. The vans feature the corporate blue logo for PureAqua. The sunlight is bright, creating a crisp and professional outdoor scene. This highlights the final step of the process: reliable and systematic logistics. No people are visible." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbuZ5VT_bSvpc_v3hByZgl8nabpNncOL4471NhE5a2sOjswrdxzCDV3immg8ewfbCbbyBdFEs4NUGLD1173STZr_0IXpzdyuLw7LkZzVi1c8DFN6Z2PPtWw4AO1Il5D-Kx9onMEFWUbfa2-gPPDqm06RcNeElu4IuG8cwsQPGhawdPla9QQtPD9Kbkaa80uBscUhPMyRn2SDxOi_FAENuZNvPgHrET9RgldlCR0DogWxImpHqBH1wtNskM25RspSy-w7hf-LtkOdo"/>
+</div>
+<div class="step-connector hidden md:flex items-center justify-center w-16 h-16 bg-primary text-on-primary rounded-full z-10 font-bold border-4 border-surface shadow-md">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+</div>
+<div class="w-full md:w-1/2 flex justify-center md:justify-start order-2">
+<div class="max-w-md bg-white p-lg rounded-xl border border-outline-variant water-shadow">
+<div class="flex items-center gap-4 mb-4">
+<span class="bg-primary-container text-on-primary-container w-10 h-10 rounded-full flex items-center justify-center font-bold">8</span>
+<h3 class="font-headline-md text-headline-md">Delivery</h3>
+</div>
+<p class="text-on-surface-variant font-body-md mb-4">Our temperature-controlled fleet delivers pure hydration directly to your location within 4 hours of your scheduled window.</p>
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+<span class="font-label-md">On-Time Logistics</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="py-xl bg-primary text-on-primary">
+<div class="max-w-container-max mx-auto px-md md:px-lg text-center">
+<h2 class="font-display-lg text-display-lg mb-md">Ready for Pure Perfection?</h2>
+<p class="text-body-lg mb-lg max-w-2xl mx-auto opacity-90">Join hundreds of corporate clients who trust our 8-stage purification process for their daily hydration needs.</p>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<button class="bg-white text-primary px-xl py-4 rounded-xl font-bold hover:scale-95 transition-transform">Get a Free Sample</button>
+<button class="bg-primary-container text-on-primary-container border border-on-primary-container/20 px-xl py-4 rounded-xl font-bold hover:bg-primary-container/80 transition-colors">View Pricing</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+
+<script>
+        // Simple intersection observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.step-item').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+<footer class="w-full py-xl px-md md:px-lg bg-primary text-on-primary">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+<span class="text-headline-md font-headline-md font-bold">PureAqua</span>
+</div>
+<p class="text-on-primary/80 font-body-md text-body-md leading-relaxed">Professional purity guaranteed. Providing the highest standard of RO water delivery services.</p>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold mb-6 uppercase tracking-wider">Pages</h4>
+<ul class="space-y-3">
+<li><a class="text-on-primary/80 hover:text-on-primary transition-all hover:translate-x-1 inline-block font-label-md" href="index.html">Home</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-all hover:translate-x-1 inline-block font-label-md" href="pages/public/about.html">About Us</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-all hover:translate-x-1 inline-block font-label-md" href="pages/public/services.html">Services</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-all hover:translate-x-1 inline-block font-label-md" href="pages/public/products.html">Products</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-all hover:translate-x-1 inline-block font-label-md" href="pages/public/process.html">RO Process</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-all hover:translate-x-1 inline-block font-label-md" href="pages/public/faq.html">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold mb-6 uppercase tracking-wider">More</h4>
+<ul class="space-y-3">
+<li><a class="text-on-primary/80 hover:text-on-primary transition-all hover:translate-x-1 inline-block font-label-md" href="pages/public/delivery-areas.html">Delivery Areas</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-all hover:translate-x-1 inline-block font-label-md" href="pages/public/gallery.html">Gallery</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-all hover:translate-x-1 inline-block font-label-md" href="pages/public/reviews.html">Reviews</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-all hover:translate-x-1 inline-block font-label-md" href="pages/public/careers.html">Careers</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-all hover:translate-x-1 inline-block font-label-md" href="pages/public/contact.html">Contact</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-all hover:translate-x-1 inline-block font-label-md" href="pages/private/login.html">Admin Login</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold mb-6 uppercase tracking-wider">Contact</h4>
+<p class="text-on-primary/80 font-body-md text-body-md mb-3 flex items-center gap-2"><span class="material-symbols-outlined text-sm">location_on</span> 123 Industrial Ave, Water City</p>
+<p class="text-on-primary/80 font-body-md text-body-md mb-3 flex items-center gap-2"><span class="material-symbols-outlined text-sm">call</span> +1 (800) PURE-AQUA</p>
+<p class="text-on-primary/80 font-body-md text-body-md mb-3 flex items-center gap-2"><span class="material-symbols-outlined text-sm">mail</span> contact@pureaqua.com</p>
+</div>
+</div>
+<div class="max-w-container-max mx-auto mt-xl pt-md border-t border-on-primary/20 text-center text-on-primary/60 font-label-md text-label-md">
+&copy; 2024 PureAqua Premium Water. All rights reserved.
+</div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var menuBtn = document.getElementById('menuBtn');
+  var sidebar = document.getElementById('mobileSidebar');
+  var closeBtn = document.getElementById('closeSidebar');
+  var backdrop = document.getElementById('sidebarBackdrop');
+  var panel = document.getElementById('sidebarPanel');
+
+  if (!menuBtn || !sidebar) return;
+
+  function openSidebar() {
+    sidebar.classList.remove('invisible');
+    setTimeout(function() {
+      backdrop.classList.remove('opacity-0');
+      panel.classList.remove('translate-x-full');
+    }, 10);
+  }
+
+  function closeSidebar() {
+    backdrop.classList.add('opacity-0');
+    panel.classList.add('translate-x-full');
+    setTimeout(function() { sidebar.classList.add('invisible'); }, 300);
+  }
+
+  menuBtn.addEventListener('click', openSidebar);
+  if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+  if (backdrop) backdrop.addEventListener('click', closeSidebar);
+});
+</script>
+
+</body></html>
