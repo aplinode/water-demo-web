@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Now | PureAqua Premium Hydration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(229, 242, 255, 0.5);
+        }
+        .input-focus-effect:focus {
+            box-shadow: 0 0 0 4px rgba(0, 89, 186, 0.1);
+        }
+        .step-active {
+            color: #0059ba;
+            font-weight: 600;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-highest": "#e5e2e1",
+                      "inverse-on-surface": "#f3f0ef",
+                      "on-primary-fixed": "#001a40",
+                      "on-surface-variant": "#414754",
+                      "surface-dim": "#dcd9d9",
+                      "background": "#fcf9f8",
+                      "on-tertiary-fixed": "#001f2a",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#bee9ff",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed-dim": "#68d3ff",
+                      "on-secondary-container": "#003a5e",
+                      "outline": "#717786",
+                      "on-tertiary-fixed-variant": "#004d64",
+                      "primary": "#0059ba",
+                      "secondary-container": "#1ea8ff",
+                      "on-background": "#1c1b1b",
+                      "on-tertiary-container": "#fbfdff",
+                      "on-primary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "tertiary": "#006481",
+                      "surface-container-high": "#eae7e7",
+                      "secondary-fixed-dim": "#96cbff",
+                      "on-error": "#ffffff",
+                      "surface-container-low": "#f6f3f2",
+                      "inverse-surface": "#313030",
+                      "on-secondary-fixed": "#001d33",
+                      "surface-container": "#f0eded",
+                      "outline-variant": "#c1c6d7",
+                      "on-tertiary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "surface-bright": "#fcf9f8",
+                      "primary-container": "#0071e9",
+                      "secondary": "#00639b",
+                      "surface-variant": "#e5e2e1",
+                      "surface-tint": "#005bbf",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-container": "#007ea2",
+                      "primary-fixed-dim": "#acc7ff",
+                      "on-primary-container": "#fefcff",
+                      "on-secondary-fixed-variant": "#004a76",
+                      "inverse-primary": "#acc7ff",
+                      "primary-fixed": "#d7e2ff",
+                      "on-primary-fixed-variant": "#004492",
+                      "on-surface": "#1c1b1b",
+                      "secondary-fixed": "#cee5ff",
+                      "surface": "#fcf9f8"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "xs": "4px",
+                      "gutter": "24px",
+                      "md": "24px",
+                      "margin-desktop": "64px",
+                      "lg": "48px",
+                      "sm": "12px",
+                      "base": "8px",
+                      "xl": "80px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "label-md": ["Inter"],
+                      "title-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg-mobile": ["Inter"]
+              },
+              "fontSize": {
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Header (Sticky for consistency) -->
+<header class="bg-white/90 backdrop-blur-md dark:bg-surface-container-lowest/90 shadow-sm docked full-width top-0 sticky z-50 transition-all">
+<nav class="flex justify-between items-center px-margin-desktop h-20 w-full max-w-[1200px] mx-auto">
+<div class="text-title-md font-display-lg font-bold text-primary dark:text-inverse-primary">PureAqua</div>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Products</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Quality</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Contact</a>
+<button class="bg-primary text-white px-6 py-2.5 rounded-full font-bold active:scale-95 transition-transform hover:bg-primary-container">Order Now</button>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<main class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-lg md:py-xl">
+<!-- Hero Title Section -->
+<div class="mb-lg text-center md:text-left max-w-2xl">
+<span class="text-primary font-bold tracking-widest uppercase text-label-md mb-2 block">Quick Checkout</span>
+<h1 class="font-display-lg text-display-lg text-on-surface leading-tight mb-4">Pure Refreshment, <span class="text-primary">Delivered.</span></h1>
+<p class="text-body-lg text-on-surface-variant">Complete your order below to receive premium mineral water at your doorstep. Professional service, guaranteed purity.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Order Form Section -->
+<div class="lg:col-span-8">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-8 border border-outline-variant/30">
+<form class="space-y-lg" id="orderForm">
+<!-- Step 1: Personal Details -->
+<div class="space-y-md">
+<div class="flex items-center gap-3 mb-2">
+<span class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">1</span>
+<h3 class="font-title-md text-title-md">Contact Details</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1">Full Name</label>
+<input class="w-full px-4 py-3 rounded-lg bg-surface-container-low border-transparent focus:bg-white focus:border-primary focus:ring-0 transition-all input-focus-effect font-body-md" placeholder="John Doe" required="" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1">Phone Number</label>
+<input class="w-full px-4 py-3 rounded-lg bg-surface-container-low border-transparent focus:bg-white focus:border-primary focus:ring-0 transition-all input-focus-effect font-body-md" placeholder="+1 (555) 000-0000" required="" type="tel"/>
+</div>
+</div>
+</div>
+<hr class="border-outline-variant/20"/>
+<!-- Step 2: Delivery Info -->
+<div class="space-y-md">
+<div class="flex items-center gap-3 mb-2">
+<span class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">2</span>
+<h3 class="font-title-md text-title-md">Delivery Address</h3>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1">Complete Address</label>
+<textarea class="w-full px-4 py-3 rounded-lg bg-surface-container-low border-transparent focus:bg-white focus:border-primary focus:ring-0 transition-all input-focus-effect font-body-md" placeholder="Apartment, Street, Area, City" required="" rows="3"></textarea>
+</div>
+</div>
+<hr class="border-outline-variant/20"/>
+<!-- Step 3: Product Selection -->
+<div class="space-y-md">
+<div class="flex items-center gap-3 mb-2">
+<span class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">3</span>
+<h3 class="font-title-md text-title-md">Select Product</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Product Card 1 -->
+<label class="relative cursor-pointer group">
+<input checked="" class="peer sr-only" name="product" type="radio" value="premium-5gal"/>
+<div class="p-4 rounded-xl border-2 border-outline-variant/30 bg-white group-hover:border-primary/50 transition-all peer-checked:border-primary peer-checked:bg-primary/5 flex items-center gap-4">
+<div class="w-16 h-16 bg-blue-50 rounded-lg flex items-center justify-center overflow-hidden">
+<img alt="5 Gallon Premium" class="object-contain" data-alt="A large clear 5-gallon water jug for a dispenser, set against a bright studio background with soft reflections and blue lighting accents. The image is captured in a high-resolution commercial photography style, emphasizing purity and clean hydration. The overall aesthetic is professional, minimalist, and refreshing, perfectly aligning with a premium water brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNGgA3MKH8qdcwEwD5ZW8nM8BjrGlHKvvIXd8z1zooEHIgLGLN16n5B1Y4P4lNQvEyna9jID1jM3oR590Iw2iXKrVeNjxKQEFPrv3XNfcw5EOSVxwABfMdiHAbIre9wQjtOV0IOVAIHs1ZGjYOBhzzlWVZzaECx46VYOa2BK1NIrU4wnfCtax5Qvxrd6HwPbVH_Q7Cb43XZr272fBPBpGvDUeZblkyNMMbaWWfnS7YRXfuFOkcmZ9MsH26d2jOwmtig8YEofKc9aA"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Premium 5 Gallon</p>
+<p class="text-sm text-on-surface-variant">$5.00 / Bottle</p>
+</div>
+<div class="ml-auto opacity-0 peer-checked:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary" data-weight="fill">check_circle</span>
+</div>
+</div>
+</label>
+<!-- Product Card 2 -->
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="product" type="radio" value="case-24"/>
+<div class="p-4 rounded-xl border-2 border-outline-variant/30 bg-white group-hover:border-primary/50 transition-all peer-checked:border-primary peer-checked:bg-primary/5 flex items-center gap-4">
+<div class="w-16 h-16 bg-blue-50 rounded-lg flex items-center justify-center overflow-hidden">
+<img alt="24 Pack Bottles" class="object-contain" data-alt="A pristine shrink-wrapped case of 24 clear plastic water bottles with blue labels, arranged neatly in a bright, high-key commercial studio setting. Soft, diffused lighting creates gentle highlights on the plastic surfaces, emphasizing hygiene and freshness. The scene evokes a sense of reliability and wholesale purity, suitable for corporate or family hydration needs in a modern minimalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByAVjqytOJf3B8l_BkAo5jkRGVwN0jlx2E9LFb_nAEYrZ8mXwtFMhOV6C2GmjT-G4J_DDJw91HZrv_QZgjQqL62zZQ395nOLH7Ks1JqrAPd3gKP33wd9MN8AVi1LuxFQpeFZj85Lbx1tg6mL50Z2or1G-0i9n5RsgqujcwvQMDpbbu_zEqWlrBt_Wn8okDvwOJ3wVynI0AD0mRIguESVHHzZ5Ms-qzVp9EwzodU9Oy0yFRgbtWV3gGLyHnXRT4B_-hwo-3WIZQfxA"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">500ml Case (24 pcs)</p>
+<p class="text-sm text-on-surface-variant">$12.00 / Case</p>
+</div>
+<div class="ml-auto opacity-0 peer-checked:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary" data-weight="fill">check_circle</span>
+</div>
+</div>
+</label>
+</div>
+</div>
+<hr class="border-outline-variant/20"/>
+<!-- Step 4: Preferences -->
+<div class="space-y-md">
+<div class="flex items-center gap-3 mb-2">
+<span class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">4</span>
+<h3 class="font-title-md text-title-md">Schedule &amp; Quantity</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1">Quantity</label>
+<div class="flex items-center border border-outline-variant/30 rounded-lg bg-surface-container-low overflow-hidden h-[50px]">
+<button class="px-4 h-full hover:bg-outline-variant/20 transition-colors" onclick="updateQty(-1)" type="button">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<input class="w-full text-center bg-transparent border-none focus:ring-0 font-bold" id="quantity" min="1" readonly="" type="number" value="1"/>
+<button class="px-4 h-full hover:bg-outline-variant/20 transition-colors" onclick="updateQty(1)" type="button">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1">Preferred Date</label>
+<input class="w-full px-4 py-3 rounded-lg bg-surface-container-low border-transparent focus:bg-white focus:border-primary focus:ring-0 transition-all h-[50px] font-body-md" required="" type="date"/>
+</div>
+</div>
+<div class="space-y-1 pt-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1">Delivery Notes (Optional)</label>
+<textarea class="w-full px-4 py-3 rounded-lg bg-surface-container-low border-transparent focus:bg-white focus:border-primary focus:ring-0 transition-all font-body-md" placeholder="Gate code, landmark, or specific instructions" rows="2"></textarea>
+</div>
+</div>
+</form>
+</div>
+</div>
+<!-- Order Summary Card (Sidebar) -->
+<div class="lg:col-span-4">
+<div class="sticky top-28 space-y-md">
+<div class="bg-white rounded-xl shadow-xl overflow-hidden border border-outline-variant/10">
+<div class="bg-primary px-6 py-4">
+<h3 class="text-white font-title-md text-title-md">Order Summary</h3>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-center text-body-md">
+<span class="text-on-surface-variant">Product Subtotal</span>
+<span class="font-semibold" id="subtotal">$5.00</span>
+</div>
+<div class="flex justify-between items-center text-body-md">
+<span class="text-on-surface-variant">Delivery Fee</span>
+<span class="text-primary font-semibold">FREE</span>
+</div>
+<div class="flex justify-between items-center text-body-md">
+<span class="text-on-surface-variant">Tax (Calculated at checkout)</span>
+<span class="font-semibold">$0.00</span>
+</div>
+<hr class="border-outline-variant/20"/>
+<div class="flex justify-between items-center pt-2">
+<span class="font-bold text-title-md">Total Amount</span>
+<span class="font-bold text-headline-lg text-primary" id="total">$5.00</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg flex items-start gap-3 mt-4">
+<span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+<p class="text-xs text-on-surface-variant leading-relaxed">Secure payment and guaranteed delivery by our professional uniformed staff. You can pay via Cash or Card upon arrival.</p>
+</div>
+<button class="w-full bg-primary text-white py-4 rounded-xl font-bold text-body-lg shadow-lg shadow-primary/20 hover:bg-primary-container active:scale-[0.98] transition-all flex items-center justify-center gap-2 mt-4" form="orderForm" type="submit">
+                                Confirm Order
+                                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Trust Indicators -->
+<div class="grid grid-cols-2 gap-md">
+<div class="bg-white p-4 rounded-xl shadow-sm border border-outline-variant/10 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary mb-2" style="font-size: 32px;">verified</span>
+<span class="text-[10px] uppercase tracking-wider font-bold text-on-surface-variant">ISO Certified</span>
+</div>
+<div class="bg-white p-4 rounded-xl shadow-sm border border-outline-variant/10 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary mb-2" style="font-size: 32px;">schedule</span>
+<span class="text-[10px] uppercase tracking-wider font-bold text-on-surface-variant">24h Delivery</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-dim border-t border-outline-variant mt-xl">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-xl max-w-[1200px] mx-auto">
+<div class="space-y-4">
+<div class="text-title-md font-display-lg text-primary">PureAqua</div>
+<p class="text-body-md text-on-surface-variant leading-relaxed">Providing the purest hydration solutions for families and offices since 2012.</p>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-on-surface">Quick Links</h4>
+<div class="flex flex-col gap-2">
+<a class="text-on-surface-variant hover:text-primary underline decoration-primary/30 underline-offset-4 transition-all duration-300" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary underline decoration-primary/30 underline-offset-4 transition-all duration-300" href="#">Terms of Service</a>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-on-surface">Support</h4>
+<div class="flex flex-col gap-2">
+<a class="text-on-surface-variant hover:text-primary underline decoration-primary/30 underline-offset-4 transition-all duration-300" href="#">Shipping Info</a>
+<a class="text-on-surface-variant hover:text-primary underline decoration-primary/30 underline-offset-4 transition-all duration-300" href="#">Returns</a>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-on-surface">Contact</h4>
+<div class="flex flex-col gap-2 text-on-surface-variant">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">mail</span> hello@pureaqua.com</span>
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">call</span> +1 800 555 PURE</span>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/10 py-6 text-center text-sm text-on-surface-variant">
+            © 2024 PureAqua Premium Water. All rights reserved.
+        </div>
+</footer>
+<script>
+        // Simple Qty and Price Logic
+        const prices = {
+            'premium-5gal': 5.00,
+            'case-24': 12.00
+        };
+
+        function updateQty(delta) {
+            const input = document.getElementById('quantity');
+            let val = parseInt(input.value) + delta;
+            if (val < 1) val = 1;
+            input.value = val;
+            updateTotals();
+        }
+
+        function updateTotals() {
+            const qty = parseInt(document.getElementById('quantity').value);
+            const selectedProduct = document.querySelector('input[name="product"]:checked').value;
+            const price = prices[selectedProduct];
+            const subtotal = qty * price;
+            
+            document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('total').textContent = `$${subtotal.toFixed(2)}`;
+        }
+
+        // Listen for product changes
+        document.querySelectorAll('input[name="product"]').forEach(radio => {
+            radio.addEventListener('change', updateTotals);
+        });
+
+        // Form submission micro-interaction
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = e.submitter;
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Processing...';
+            btn.classList.add('opacity-80', 'pointer-events-none');
+            
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined">check</span> Success!';
+                btn.classList.remove('bg-primary');
+                btn.classList.add('bg-green-600');
+                
+                setTimeout(() => {
+                    alert('Order Placed Successfully! Our team will contact you shortly.');
+                    btn.innerHTML = originalContent;
+                    btn.classList.add('bg-primary');
+                    btn.classList.remove('bg-green-600', 'opacity-80', 'pointer-events-none');
+                }, 1500);
+            }, 2000);
+        });
+    </script>
+</body></html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PureAqua | Customer Reviews</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#e5e2e1",
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-primary-fixed": "#001a40",
+                    "on-surface-variant": "#414754",
+                    "surface-dim": "#dcd9d9",
+                    "background": "#fcf9f8",
+                    "on-tertiary-fixed": "#001f2a",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#bee9ff",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#68d3ff",
+                    "on-secondary-container": "#003a5e",
+                    "outline": "#717786",
+                    "on-tertiary-fixed-variant": "#004d64",
+                    "primary": "#0059ba",
+                    "secondary-container": "#1ea8ff",
+                    "on-background": "#1c1b1b",
+                    "on-tertiary-container": "#fbfdff",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#006481",
+                    "surface-container-high": "#eae7e7",
+                    "secondary-fixed-dim": "#96cbff",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#f6f3f2",
+                    "inverse-surface": "#313030",
+                    "on-secondary-fixed": "#001d33",
+                    "surface-container": "#f0eded",
+                    "outline-variant": "#c1c6d7",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#fcf9f8",
+                    "primary-container": "#0071e9",
+                    "secondary": "#00639b",
+                    "surface-variant": "#e5e2e1",
+                    "surface-tint": "#005bbf",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#007ea2",
+                    "primary-fixed-dim": "#acc7ff",
+                    "on-primary-container": "#fefcff",
+                    "on-secondary-fixed-variant": "#004a76",
+                    "inverse-primary": "#acc7ff",
+                    "primary-fixed": "#d7e2ff",
+                    "on-primary-fixed-variant": "#004492",
+                    "on-surface": "#1c1b1b",
+                    "secondary-fixed": "#cee5ff",
+                    "surface": "#fcf9f8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "xs": "4px",
+                    "gutter": "24px",
+                    "md": "24px",
+                    "margin-desktop": "64px",
+                    "lg": "48px",
+                    "sm": "12px",
+                    "base": "8px",
+                    "xl": "80px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "title-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .star-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        .review-card-shadow {
+            box-shadow: 0 4px 20px rgba(11, 125, 255, 0.04);
+        }
+        .review-card-shadow:hover {
+            box-shadow: 0 8px 30px rgba(11, 125, 255, 0.08);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- Top Navigation Bar -->
+<header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm w-full">
+<nav class="flex justify-between items-center px-margin-desktop h-20 w-full max-w-[1200px] mx-auto">
+<div class="text-title-md font-display-lg font-bold text-primary">PureAqua</div>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Products</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">Quality</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md text-label-md active:scale-95 transition-transform">
+                Order Now
+            </button>
+</nav>
+</header>
+<main class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-xl">
+<!-- Header Section with Animation -->
+<section class="relative mb-xl rounded-xl overflow-hidden bg-primary-container p-lg text-on-primary-container flex flex-col md:flex-row items-center justify-between gap-lg">
+
+<div class="relative z-10 max-w-2xl">
+<h1 class="font-display-lg text-display-lg mb-md">Trusted by Thousands</h1>
+<p class="text-body-lg font-body-lg opacity-90">Experience why PureAqua is the leading choice for premium hydration services across the region.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center bg-white/20 backdrop-blur-xl p-md rounded-xl border border-white/30">
+<div class="text-6xl font-bold mb-2">4.9</div>
+<div class="flex text-tertiary-fixed mb-2">
+<span class="material-symbols-outlined star-fill">star</span>
+<span class="material-symbols-outlined star-fill">star</span>
+<span class="material-symbols-outlined star-fill">star</span>
+<span class="material-symbols-outlined star-fill">star</span>
+<span class="material-symbols-outlined star-fill">star</span>
+</div>
+<div class="text-label-md font-label-md">Based on 2,540 Google Reviews</div>
+</div>
+</section>
+<!-- Stats Grid -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-gutter mb-xl">
+<div class="bg-white p-md rounded-xl review-card-shadow text-center">
+<div class="text-primary font-bold text-headline-lg mb-xs">99%</div>
+<div class="text-on-surface-variant text-label-md">Customer Satisfaction</div>
+</div>
+<div class="bg-white p-md rounded-xl review-card-shadow text-center">
+<div class="text-primary font-bold text-headline-lg mb-xs">15k+</div>
+<div class="text-on-surface-variant text-label-md">Daily Deliveries</div>
+</div>
+<div class="bg-white p-md rounded-xl review-card-shadow text-center">
+<div class="text-primary font-bold text-headline-lg mb-xs">24/7</div>
+<div class="text-on-surface-variant text-label-md">Active Support</div>
+</div>
+<div class="bg-white p-md rounded-xl review-card-shadow text-center">
+<div class="text-primary font-bold text-headline-lg mb-xs">100%</div>
+<div class="text-on-surface-variant text-label-md">Mineral Content</div>
+</div>
+</section>
+<!-- Reviews Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Review 1 -->
+<div class="bg-white p-md rounded-xl review-card-shadow flex flex-col transition-all duration-300">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm">
+<img alt="Customer Avatar" class="w-12 h-12 rounded-full object-cover border-2 border-primary-fixed" data-alt="A professional close-up portrait of a middle-aged male executive smiling warmly. He is wearing a crisp white dress shirt and is positioned in a modern, brightly lit office environment with soft blue accent lighting. The photography is sharp and high-resolution, conveying trust and corporate professionalism in line with a premium water brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApFuj8jSh7ueZaMzayLrBDbSAs51sCUZz0PK9HUgTZTGxEtJ-A5BXmWu-yOebI3UF1K5JYlr7THWl9LGCi8k_fDX1Js0sQkNwYxz4UUuHXLj_ec3YLyNlCTSfVv9p5YkY-NgmCmt6nyxZ3_2vTy5thM3GOwMGsTvmEjOrV98kJu-40KxCddR2rcms7zMp9uxdLjBkabERG_UIm68gY6EeM97J23iE_R6dJwFd39vm0_Ki17FVxrzBhSCx6FhYImwkjrUVA5Y60J00"/>
+<div>
+<div class="font-title-md text-on-surface">Ahmed Al-Sayed</div>
+<div class="text-label-md text-on-surface-variant">Local Guide • 42 reviews</div>
+</div>
+</div>
+<img alt="Google" class="w-6 h-6 grayscale opacity-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt7ee5-0U1NP9S3NgFJFPweuGOa-rFgwG6sj4NFrQFp8qDP0ZGyVJO21YDgeMfr_02RVqSIDqVGZw8A5TaIhi7Lmvou-AZYY3EjX4RkmTpLpRpw8NdcNHmxBNVFk8xxDoz5_VUvxqiKfEtcudIdFXyp0hT1vn1ijjzzTyFwlVxYqALenjp8M2O2QwrAwwUFm0hzbQYQiPKciEClSdM6NLt_i6wXkViuU1pfqD0rlEUYQLeoCM-ADsC1d_JwEgdI9g2AMR3YkSR_DQ"/>
+</div>
+<div class="flex text-primary mb-sm">
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+</div>
+<p class="text-body-md text-on-surface-variant flex-grow">
+                    "I've been using PureAqua for my office for over a year now. The delivery is always on time, and the staff is incredibly professional. The water quality is visibly superior to other brands we've tried. Highly recommended for corporate clients."
+                </p>
+<div class="mt-md text-xs text-on-surface-variant opacity-60">2 weeks ago</div>
+</div>
+<!-- Review 2 -->
+<div class="bg-white p-md rounded-xl review-card-shadow flex flex-col transition-all duration-300">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm">
+<img alt="Customer Avatar" class="w-12 h-12 rounded-full object-cover border-2 border-primary-fixed" data-alt="A detailed portrait of a professional male engineer in a light blue polo shirt, standing outdoors in a clean, modern urban setting during daylight. The lighting is natural and bright, emphasizing a clean-cut and reliable appearance. The background shows blurred architectural glass, reflecting the cool blue tones of the PureAqua brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxogtVSEyEG7QDxL1aHk5fpZWUDXkZk-VgY2OfWM4_KcWndKl9gzBON-BPGfH_csFeAN7_hO7ZzzTDMD_vXsyVF-72VdvXkIozAlm9cywGIVwx5U43BYXkUvMWXBzdyskMNqBtUOR5v_BMrz3zV1TSdRIxS0RihSKjAQZUfMQVupta3JZ4Sy_Wsx7aRJ-TpyUwJWRsnuDgJHruHXPLavqlLlt73r2YFm5CyjiHJS1WkFbwYmeBFzLToK1BmRu1vLr1ij5gXcyCoRg"/>
+<div>
+<div class="font-title-md text-on-surface">David Richardson</div>
+<div class="text-label-md text-on-surface-variant">Residential Client</div>
+</div>
+</div>
+<img alt="Google" class="w-6 h-6 grayscale opacity-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqjLTw2xdJ8Vj-kG3PuBGK0cxitZNo_85C-yZ0dgahkq59ITRrV2IH5ANrOOt6-G5mTuTkUwX645iT7qypSXLWjSvO5HnzWjZAvspdp--_ZH81GrHYMn7KfWESZMmnougyLXnqgonCVS38eqtWVa-_1x-F802kcL-lGsKhw39TLbE6nggx51VwvWdUR1N552jMVyn4OwZpUSjAk46CDjIlEQiXcR5BwsCgvNG-WhqyjwTqyan9LamlWcQTzjktKbyaY3_T1xPd4VY"/>
+</div>
+<div class="flex text-primary mb-sm">
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+</div>
+<p class="text-body-md text-on-surface-variant flex-grow">
+                    "Setting up the weekly home delivery was seamless through their app. The delivery professional always wears a clean uniform and mask, which gives us great peace of mind regarding hygiene standards. Best in class service."
+                </p>
+<div class="mt-md text-xs text-on-surface-variant opacity-60">1 month ago</div>
+</div>
+<!-- Review 3 -->
+<div class="bg-white p-md rounded-xl review-card-shadow flex flex-col transition-all duration-300">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm">
+<img alt="Customer Avatar" class="w-12 h-12 rounded-full object-cover border-2 border-primary-fixed" data-alt="A portrait of a male delivery manager in a high-tech warehouse environment. He is wearing a professional navy blue uniform with a subtle company logo. The lighting is bright and industrial, highlighting the pristine cleanliness of the facility. The overall mood is one of precision, hygiene, and logistical excellence, fitting for a premium water brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVOtRfb22gKqeaB6JI3HB2AsMSWRGpo9h5J_uwLhdKM81LyjrE2-iVJTCKxaTrNNeGiq0W5xC3CwoG60hT9HmzIafvmRigXq_i1ptzIMF7mXVPf0iUPreNT9K38gtEkbCR8SU7tzUTDp1bjDmtfCQhIwGGfWtMQlPERczghyKNVgFxT6ejttjYV3OMbkmSseWTFWAz_42Q8Q1C2X6-PI51-mtI-4qV_qHWjTMCPVwDA6aelHdCWVpBkVR22X0JMWm9N6ghnp7XBQI"/>
+<div>
+<div class="font-title-md text-on-surface">Omar Farooq</div>
+<div class="text-label-md text-on-surface-variant">Business Owner</div>
+</div>
+</div>
+<img alt="Google" class="w-6 h-6 grayscale opacity-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPKPAX0LdLSL-VoCj8OCYSIROzfLMlhkbWOQkRs0fhbfLVrXQJNxCKj-S7mOq1p5XqflPrHwMTJCXJNZOaMnOugPakot27KV0ofpvbN8uvs5ZRdQrpA6UuSOC2Mw2Yqkq7QlGsLLAdImWcK6WeZ8z4aOg2qBqoZACAaxC6EKuwXWYRiEn-uZdc1yy2mcLsd1F8EowDUHME_Eb9_7VtSOdmRjfdgvUIigvzlD7oI9L3phTIy7pjFpFCo8hSRpHtOqvhpS1ibFEgJrk"/>
+</div>
+<div class="flex text-primary mb-sm">
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+</div>
+<p class="text-body-md text-on-surface-variant flex-grow">
+                    "PureAqua's filtration technology is top-notch. I visited their facility and was impressed by the level of automation and hygiene. We use their bulk containers for our gym chain, and our members love the crisp taste."
+                </p>
+<div class="mt-md text-xs text-on-surface-variant opacity-60">3 days ago</div>
+</div>
+<!-- Review 4 -->
+<div class="bg-white p-md rounded-xl review-card-shadow flex flex-col transition-all duration-300">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm">
+<img alt="Customer Avatar" class="w-12 h-12 rounded-full object-cover border-2 border-primary-fixed" data-alt="A professional male figure in a light blue business casual attire, sitting in a bright, minimalist glass-walled boardroom. The scene is illuminated with high-key natural light, creating an airy and pure atmosphere. The composition emphasizes reliability and sophisticated taste, aligning with the corporate minimalism of a premium hydration service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWlXeyz1rj4fH_vA-LAkSErp13BRgf84GFHXolna2FICKWY27PC9jjBhq0GnMEVemmzaQSvcyHCC4fYiW3W577U4O64Nr222eQs4zRbQQCqKMfPPW3Sqfn4HoDz5_mtD2PlE69gXDRxqrjUyi-swMMEzKsp45P3M34pI0wL4F8AD9uH0G2GomdlqbzZeObNnerpSDbxU28pbzeungRp5s706WAgQ0Uavt-dwTWnUCD7XRv3YjrgIxZ_x8fk5Zu5sscFXBK4ZmJJWw"/>
+<div>
+<div class="font-title-md text-on-surface">Michael Tan</div>
+<div class="text-label-md text-on-surface-variant">Facility Manager</div>
+</div>
+</div>
+<img alt="Google" class="w-6 h-6 grayscale opacity-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtICCS2tE2OCUGqYTvasISRBmzkjECqTv2Z7LM3Y7RHFofhFRKciFq-A7U9ib5gkWgqXu2mTUqxddanou6TGKcdBYeR1ZyfLXt8mkfDiYIYlTAIEkbZKDxvrQ52z5SC2XZrOHpdhb6eaXpdJhCakTX1rHnQL8nV1ofJfBIHQPfM1nMPVqqVIu891WOr1QRHdTUdML173Ew3OM28Kx5-axrGDcp7pLlFy7FrRt3-d6ZcZKJb0CMvaeeaWDbLDYZzh5qpnA1lQ_YOME"/>
+</div>
+<div class="flex text-primary mb-sm">
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+</div>
+<p class="text-body-md text-on-surface-variant flex-grow">
+                    "Excellent response time. Whenever we have a last-minute event, PureAqua ensures we have enough supply within hours. Their logistics team is the best I've worked with in the industry."
+                </p>
+<div class="mt-md text-xs text-on-surface-variant opacity-60">1 week ago</div>
+</div>
+<!-- Review 5 -->
+<div class="bg-white p-md rounded-xl review-card-shadow flex flex-col transition-all duration-300">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm">
+<img alt="Customer Avatar" class="w-12 h-12 rounded-full object-cover border-2 border-primary-fixed" data-alt="A portrait of a male fitness instructor in a clean, modern gym environment with blue lighting accents. He looks healthy and energetic, embodying the benefits of pure hydration. The photography is crisp with a shallow depth of field, focusing on the person while the background shows high-end gym equipment in a white and blue color scheme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD0in_0K_b-ZV2maNPTj_iE8zuKg9Dvgne96L4J5tOssqb7Xh4SGCeUT0m9qfeKhvr9Z9o1qM6jY4RTRw7UuVoHZQ-ypTXS4NfhlvvT3qw6hhEemH1bRPOfvjG2bR7Gb9TpLqc12_OMaWQVUXfPnf4kqnqvds-pniY23MbOEblcm_bXdBQTIduSUAA4nS5IMuLIO9PvKM_wHJQMWmQ--2GStVztGmLwHGv_NXZwojL6vasuUGv87--y7ay8ZvPl57MlOHuqHowJuM"/>
+<div>
+<div class="font-title-md text-on-surface">James Wilson</div>
+<div class="text-label-md text-on-surface-variant">Personal Trainer</div>
+</div>
+</div>
+<img alt="Google" class="w-6 h-6 grayscale opacity-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9nxeu-KdpKC98ar3AtoPTaGJGw8aaVGtGbeqgCVS1Fft1hPqz37m9mk0Z6Nqo7cMu5QWhYmzubJcqK0j4puZFFhzaBWP0L2NuwjQErcfdScFOp_yA1CksVa4dNMKYUkBnPlt4fmNCo-29tpfdwyPh9uzxL2scd3mXOc6otPNFkgFPsYiONQP9zjKYtZRYEXYJOajbHjPwDdNVnrCq9moVgMxeQqqCAuICy7rR9SFmDCSynV7KDpY8j8MivY2BR6zVfjdoN4CIK1c"/>
+</div>
+<div class="flex text-primary mb-sm">
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+</div>
+<p class="text-body-md text-on-surface-variant flex-grow">
+                    "Purity is everything when you're training athletes. PureAqua provides the perfect balance of minerals without any aftertaste. It's the only brand I recommend to my clients for their daily hydration needs."
+                </p>
+<div class="mt-md text-xs text-on-surface-variant opacity-60">2 weeks ago</div>
+</div>
+<!-- Review 6 -->
+<div class="bg-white p-md rounded-xl review-card-shadow flex flex-col transition-all duration-300">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm">
+<img alt="Customer Avatar" class="w-12 h-12 rounded-full object-cover border-2 border-primary-fixed" data-alt="A portrait of a senior male professional in a light grey suit, looking confident and satisfied. He is standing in front of a window with a bright city view, with the soft morning light highlighting his features. The image conveys a sense of longevity, wisdom, and high standards, consistent with a long-term user of a premium service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSv6Vt03nOy1w4DDXpHc_Bva3MusS4Wz12pLUKcFFNswa5UNAce5yIZNhrAdDxsfi7a_39zqawATLH69vmI-OIlBSq2zKFV-QFhgNhQmFK8fKgtxWKJBCpRWtWSeXKosHT5fnNym75KfitiKaL0tGCi6uxFM57vKTsSV9AGn7fUNWxFAzTfDRFRHpoeGyHnnCtTSCMtrP4HWV3CcIXsKeZm8Iwsd6_lLzBGd0KiwZlqxH6I3-9cLjiv_4fNcCX-VsLuwmJ0szo39U"/>
+<div>
+<div class="font-title-md text-on-surface">Robert Henderson</div>
+<div class="text-label-md text-on-surface-variant">Homeowner</div>
+</div>
+</div>
+<img alt="Google" class="w-6 h-6 grayscale opacity-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBtarizR7ObhXh6WJ_KIbcNIC6T82tYYiWyUOBjAxhlUvPucqEa2phi76efA62A-9oexD1VWhTgM295LBe7GeXACfYrkXpTW4ni78pr6wFgasp3VFwGKOC_Ui0_mV1CTeeSXWOIQwo_JK3Pa9GFoVeFM5CnQ4K9jJ1kECuA1opVPJozV0jeabMMtOz1x12z10k62EuQ-BwgOAbaXRnHx9964v93CSS9qPWmk6oEsXMp7-jfvj9W6zg16AtNvBObhh4-KcIaOPZOUU"/>
+</div>
+<div class="flex text-primary mb-sm">
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+<span class="material-symbols-outlined star-fill text-sm">star</span>
+</div>
+<p class="text-body-md text-on-surface-variant flex-grow">
+                    "Been a loyal customer for 5 years. The quality has never wavered. The water tastes as pure today as it did on my first order. Their delivery men are always polite and helpful with placing the heavy bottles."
+                </p>
+<div class="mt-md text-xs text-on-surface-variant opacity-60">3 weeks ago</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="mt-xl bg-surface-container p-lg rounded-xl text-center">
+<h2 class="font-headline-lg text-headline-lg mb-md text-on-surface">Join our community of satisfied customers</h2>
+<p class="text-body-lg text-on-surface-variant mb-lg max-w-2xl mx-auto">Start your journey towards healthier hydration today with a free delivery on your first order.</p>
+<div class="flex flex-col md:flex-row gap-md justify-center">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-title-md shadow-md hover:bg-primary-container transition-all">Order Now</button>
+<button class="bg-white text-primary border border-primary px-8 py-3 rounded-full font-title-md hover:bg-primary-fixed-dim transition-all">Download App</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant py-xl mt-xl">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-[1200px] mx-auto">
+<div class="col-span-1">
+<div class="text-title-md font-display-lg text-primary mb-md">PureAqua</div>
+<p class="text-on-surface-variant text-body-md">Premium hydration services for discerning homes and offices. Pure water, delivered with precision.</p>
+</div>
+<div>
+<h4 class="font-bold mb-md text-on-surface">Quick Links</h4>
+<ul class="space-y-sm">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md" href="#">About Us</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md" href="#">Products</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md" href="#">Sustainability</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-md text-on-surface">Support</h4>
+<ul class="space-y-sm">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md" href="#">Shipping Info</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md" href="#">Returns</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-md text-on-surface">Contact</h4>
+<p class="text-on-surface-variant text-body-md mb-xs">800-PUREAQUA</p>
+<p class="text-on-surface-variant text-body-md">info@pureaqua.com</p>
+<div class="flex gap-sm mt-md">
+<span class="material-symbols-outlined text-primary">phone</span>
+<span class="material-symbols-outlined text-primary">mail</span>
+<span class="material-symbols-outlined text-primary">location_on</span>
+</div>
+</div>
+</div>
+<div class="text-center mt-xl border-t border-outline-variant pt-lg px-margin-desktop">
+<p class="text-on-surface-variant text-body-md">© 2024 PureAqua Premium Water. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        // Simple intersection observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.review-card-shadow').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease-out';
+            observer.observe(card);
+        });
+    </script>
+</body></html>

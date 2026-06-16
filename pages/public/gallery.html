@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PureAqua | Commercial Gallery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-highest": "#e5e2e1",
+                      "inverse-on-surface": "#f3f0ef",
+                      "on-primary-fixed": "#001a40",
+                      "on-surface-variant": "#414754",
+                      "surface-dim": "#dcd9d9",
+                      "background": "#fcf9f8",
+                      "on-tertiary-fixed": "#001f2a",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#bee9ff",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed-dim": "#68d3ff",
+                      "on-secondary-container": "#003a5e",
+                      "outline": "#717786",
+                      "on-tertiary-fixed-variant": "#004d64",
+                      "primary": "#0059ba",
+                      "secondary-container": "#1ea8ff",
+                      "on-background": "#1c1b1b",
+                      "on-tertiary-container": "#fbfdff",
+                      "on-primary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "tertiary": "#006481",
+                      "surface-container-high": "#eae7e7",
+                      "secondary-fixed-dim": "#96cbff",
+                      "on-error": "#ffffff",
+                      "surface-container-low": "#f6f3f2",
+                      "inverse-surface": "#313030",
+                      "on-secondary-fixed": "#001d33",
+                      "surface-container": "#f0eded",
+                      "outline-variant": "#c1c6d7",
+                      "on-tertiary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "surface-bright": "#fcf9f8",
+                      "primary-container": "#0071e9",
+                      "secondary": "#00639b",
+                      "surface-variant": "#e5e2e1",
+                      "surface-tint": "#005bbf",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-container": "#007ea2",
+                      "primary-fixed-dim": "#acc7ff",
+                      "on-primary-container": "#fefcff",
+                      "on-secondary-fixed-variant": "#004a76",
+                      "inverse-primary": "#acc7ff",
+                      "primary-fixed": "#d7e2ff",
+                      "on-primary-fixed-variant": "#004492",
+                      "on-surface": "#1c1b1b",
+                      "secondary-fixed": "#cee5ff",
+                      "surface": "#fcf9f8"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "xs": "4px",
+                      "gutter": "24px",
+                      "md": "24px",
+                      "margin-desktop": "64px",
+                      "lg": "48px",
+                      "sm": "12px",
+                      "base": "8px",
+                      "xl": "80px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "label-md": ["Inter"],
+                      "title-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg-mobile": ["Inter"]
+              },
+              "fontSize": {
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .gallery-card:hover .overlay {
+            opacity: 1;
+        }
+        .active-filter {
+            @apply bg-primary text-on-primary shadow-lg scale-105;
+        }
+        .backdrop-blur-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #fcf9f8; }
+        ::-webkit-scrollbar-thumb { background: #0059ba; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- Header (Shared Component: TopNavBar) -->
+<header class="bg-white/90 backdrop-blur-md dark:bg-surface-container-lowest/90 docked full-width top-0 sticky z-50 shadow-sm">
+<nav class="flex justify-between items-center px-margin-desktop h-20 w-full max-w-[1200px] mx-auto">
+<div class="text-title-md font-display-lg font-bold text-primary dark:text-inverse-primary">PureAqua</div>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-8 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Services</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Products</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Quality</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md active:scale-95 transition-transform">
+                Order Now
+            </button>
+</nav>
+</header>
+<main class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-xl">
+<!-- Hero Section -->
+<section class="mb-xl text-center">
+<h1 class="font-display-lg text-display-lg md:text-[56px] text-primary mb-md">Our Operations in Focus</h1>
+<p class="max-w-2xl mx-auto text-on-surface-variant text-body-lg">Explore our state-of-the-art facilities, rigorous testing laboratories, and the professional fleet dedicated to bringing pure hydration to your doorstep.</p>
+</section>
+<!-- Filter Chips (Bento Style) -->
+<div class="flex flex-wrap justify-center gap-4 mb-lg" id="filter-container">
+<button class="px-6 py-2 rounded-full border border-outline-variant text-label-md font-label-md hover:bg-surface-container-high transition-all active-filter" data-filter="all">All Assets</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant text-label-md font-label-md hover:bg-surface-container-high transition-all" data-filter="plant">Water Plant</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant text-label-md font-label-md hover:bg-surface-container-high transition-all" data-filter="ro">RO System</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant text-label-md font-label-md hover:bg-surface-container-high transition-all" data-filter="fleet">Delivery Fleet</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant text-label-md font-label-md hover:bg-surface-container-high transition-all" data-filter="bottles">Water Bottles</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant text-label-md font-label-md hover:bg-surface-container-high transition-all" data-filter="lab">Testing Lab</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant text-label-md font-label-md hover:bg-surface-container-high transition-all" data-filter="ops">Operations</button>
+</div>
+<!-- Gallery Grid (Asymmetric) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter" id="gallery-grid">
+<!-- Item 1: Large Feature -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-xl bg-white shadow-[0_4px_20px_rgba(11,125,255,0.04)] gallery-item" data-category="plant">
+<img alt="Water Treatment Plant" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A wide-angle professional shot of a massive, sterile industrial water purification plant. Rows of shining stainless steel pipes and blue-labeled filtration tanks stretch into the background under bright, clean white LED lighting. The floor is a polished light gray epoxy, reflecting the clinical and high-tech environment. The atmosphere is one of extreme hygiene and corporate precision, dominated by a palette of bright whites and deep primary blues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoMc8ZMbZ4Z_d2Y1Ja65Sdb5fC6YPeFtV_dBFQaT7A9stfEms9lXkwYK6TbZymIy0rZ044fy879KIdu_Q4TZh54F6dihdpvfJcJURxjPe3CHIf7mMdXRZdTxyA3VVg1KJheMetUgtKuqjx4J0jMErKNxSeDWwTQyWgjVSAzNNExyJ22awSthUhd5GVavP8dzKNFDIDMJlQmHBXCD6bpD0v6KCUPZJSPHH4Pl4tSiPIuKjOIhnIZ9Et1eRtnvFR0dvWcKBKGcbBDHE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-lg">
+<span class="text-on-primary font-label-md mb-2">Water Plant</span>
+<h3 class="text-white font-title-md text-title-md">Advanced Purification Facility</h3>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="md:col-span-4 group relative overflow-hidden rounded-xl bg-white shadow-[0_4px_20px_rgba(11,125,255,0.04)] gallery-item" data-category="lab">
+<img alt="Quality Testing Lab" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A focused close-up of a professional male scientist's hands in blue gloves holding a clear beaker of crystal-pure water in a high-tech laboratory. Behind him, expensive analytical machinery and computer monitors showing water quality graphs are blurred. The room is brightly lit with cool white light, emphasizing the clinical cleanliness and scientific rigor of the testing process. The overall aesthetic is professional, reliable, and focused on safety." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3Av_YZC7FaNFOSxzgrJHd3KFj1z5wZeIHKKLRGkQl8cBnROtb9DfS0x395WMl7NP1O7keu7vahlpoXw79nKpcOPXmdt1QmJzphH9zp9bhg2GusTN0m4yXgiXaKTPhn-Kjh5dEYK-8nRctxOVi5M9aRmySkCWkXqbIbDY6WRo0LfqaKDfi9_Yey5lHDBipKsT3aYdJBw5hjp4nPsjJhyWPVCo6L2KDRHypagOx0riHw--Hfp2RAzi9zzmBlRgNTd9A5lL4EOhic_Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-lg">
+<span class="text-on-primary font-label-md mb-2">Testing Lab</span>
+<h3 class="text-white font-title-md text-title-md">Hourly Quality Checks</h3>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="md:col-span-4 group relative overflow-hidden rounded-xl bg-white shadow-[0_4px_20px_rgba(11,125,255,0.04)] gallery-item" data-category="fleet">
+<img alt="Delivery Fleet" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A fleet of pristine white delivery trucks with the PureAqua logo parked in a perfectly straight line at a modern logistics hub. Each truck is impeccably clean, reflecting the bright morning sun. A professional male driver in a sharp blue and white uniform is seen in the distance, performing a pre-trip inspection. The setting is organized and efficient, utilizing a high-contrast corporate modern style with a clear blue sky background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUIiw3EOEyr_xTzpOs65P3whm4Er_uonlfpuD8LnXDXZ_-GN2yVwDfRIh48mMPwf-KQAlHJvzCvCj6HeQgDv9w3bO3yuksqHrdoFjZQPqQXgb4YtBfQPVsPavuqV_GGjX-M-P7pTP4NQsTBMCBVP1MOdxhhpINVpA_xjFfRV8ELWjkY1BwL4rnbyeIs2D6_2LBpFxl4eSRNEioOPuSTAhXqFEIxlSdIbXu7A7CLry4O5Km2Xfw9s91pm3zGEXLF3_uO7wXM092D7g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-lg">
+<span class="text-on-primary font-label-md mb-2">Delivery Fleet</span>
+<h3 class="text-white font-title-md text-title-md">Rapid Logistics Network</h3>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="md:col-span-4 group relative overflow-hidden rounded-xl bg-white shadow-[0_4px_20px_rgba(11,125,255,0.04)] gallery-item" data-category="ro">
+<img alt="RO System" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A detailed shot of a 7-stage industrial Reverse Osmosis filtration system. The image highlights the intricate blue pressure vessels and silver control valves. Crystal clear droplets are artistically captured in the foreground to symbolize purity. The lighting is crisp and bright, reinforcing a sense of technological precision and hygiene. The background is a clean white wall, keeping the focus entirely on the advanced machinery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj3zWLJzcXghyrWSW9RyyubxW5IkmqXZd6TkSWDjpU5hk6NBCO42RpV7WjGGK0b9ik5u5hbs3cC4rH8ttpRhGoLPqU2GDrgwDXYQwl7IJf3gepAicYZO1p895u6MoMiya15FGczxeJD8qE6tx51vqUe7itdK6q9o69D0GFZzo0JRBIfff5DUjz478hxJnd3nYnCTsx27Gzwx8Q5laC3GLdUaXX7sVAL3lcyp32gqWCBvPY5BkzB9Cl0dh0dq39NZNKAGKSjvKBfzc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-lg">
+<span class="text-on-primary font-label-md mb-2">RO System</span>
+<h3 class="text-white font-title-md text-title-md">7-Stage Filtration</h3>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="md:col-span-4 group relative overflow-hidden rounded-xl bg-white shadow-[0_4px_20px_rgba(11,125,255,0.04)] gallery-item" data-category="bottles">
+<img alt="Water Bottles" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A professional studio product shot of several PureAqua five-gallon polycarbonate water bottles arranged symmetrically on a reflective white surface. The bottles are filled with sparkling, clear water and feature minimalist blue branding. Dramatic, soft studio lighting creates elegant highlights on the bottle curves. The overall look is premium, minimalist, and refreshing, emphasizing the high-quality standards of the product." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVAAZJoIj7OSQEisE0yxkIRAX5tlak09cI-Ir-SNFO3ScyJ27a-cJJUmJoDKtnKFPgyrjO6FNWRfBm5wNlp5tKePj-OD8QHL32LDHIJDZQbHPFkp3LuXGalSUoUt-H2-_W4W5SYK5Xw0xYEcUQG19O1Xma4l_WJWKi1Gba9IzVnYFtS1rV8Fit7R2MNtl192oFEVDNpRrzpumFlX9LQiXwQ505OPriZOzaS7Vesp7QVei8NKnUBoWBneQGlRR5MH5T_4RRjgGflW4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-lg">
+<span class="text-on-primary font-label-md mb-2">Water Bottles</span>
+<h3 class="text-white font-title-md text-title-md">BPA-Free Containers</h3>
+</div>
+</div>
+<!-- Item 6: Tall Feature -->
+<div class="md:col-span-6 group relative overflow-hidden rounded-xl bg-white shadow-[0_4px_20px_rgba(11,125,255,0.04)] gallery-item" data-category="ops">
+<img alt="Operations Center" class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A professional male supervisor in a white corporate shirt and blue tie overlooking a busy, well-organized water bottling line from a glass-walled mezzanine. Below, automated robotic arms move with precision, placing caps on bottles. The environment is ultra-modern, with a focus on automation and efficiency. The lighting is bright and even, reinforcing the brand's commitment to reliability and professional oversight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZMIpg8Wm-IMcQK_vnUcTdgPnIP9iX1uecoykSeFrgF-ysng2r0sCOrmhLrJertguu8Cfi2_m0x_Uqklyq9BEv8W6gBUdinm2o1iYIzS6pAawBHsioUDaTPrf_jorxLmTZRfuUvbA0pnbgGnjtQBJENx-EwQMu8RkTW2Q2zkQQNxZB41TfGBvIz2Jr049SqM3U7VVhuPduIwCaPdyJi5TQIMc3746npEDpG3xg7UKBU9hDBgI5NciLOMoZ0MAy6fcJwNeNIj5ya3E"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-lg">
+<span class="text-on-primary font-label-md mb-2">Operations</span>
+<h3 class="text-white font-title-md text-title-md">Smart Production Line</h3>
+</div>
+</div>
+<!-- Item 7 -->
+<div class="md:col-span-6 group relative overflow-hidden rounded-xl bg-white shadow-[0_4px_20px_rgba(11,125,255,0.04)] gallery-item" data-category="fleet">
+<img alt="Staff Loading" class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Two professional male staff members in clean, branded blue uniforms loading a delivery truck with stacks of water bottles. They are smiling and working efficiently in a bright, clean loading dock. The scene conveys a message of friendly service and professional teamwork. The lighting is natural and bright, highlighting the cleanliness of the uniforms and the organization of the loading area." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCQ0VNO13cZqp97_m2cDCYNJ3eRfLkMalsgmY71rXkS4RlalISev5frES1zyhDZACD0xCcwFfBMVSkUX_37Nuu0JbMYU1Iws8LKGEYD3APq-c1CgJhwF-MCwQrSoLH4kBSyesvC27AxrrwyYGNTZBolFyq77IJtFstH8nAO6fepA-oIXQiZ48ixUR-Os8qOKk1boexwydaCN2ATqa6k9VIwBfaOgG8Buc296E1DcwKkI-nMeANzoLycGmF-_Hf9SRbA03bhp5SBmY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-lg">
+<span class="text-on-primary font-label-md mb-2">Operations</span>
+<h3 class="text-white font-title-md text-title-md">Dedicated Service Team</h3>
+</div>
+</div>
+</div>
+</main>
+<!-- Lightbox Modal -->
+<div class="fixed inset-0 bg-black/95 z-[60] hidden flex items-center justify-center p-8" id="lightbox">
+<button class="absolute top-8 right-8 text-white hover:text-primary transition-colors" id="close-lightbox">
+<span class="material-symbols-outlined text-4xl">close</span>
+</button>
+<img alt="Full size" class="max-w-full max-h-full object-contain shadow-2xl rounded-lg" id="lightbox-img" src=""/>
+</div>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-container-lowest dark:bg-surface-dim full-width border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-xl max-w-[1200px] mx-auto font-body-md text-body-md">
+<div class="col-span-1 md:col-span-1">
+<div class="text-title-md font-display-lg text-primary mb-md">PureAqua</div>
+<p class="text-on-surface-variant text-label-md">Delivering the gold standard of hydration since 2012.</p>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-4">Quick Links</h4>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant hover:text-primary underline decoration-primary/30 underline-offset-4 transition-all duration-300" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary underline decoration-primary/30 underline-offset-4 transition-all duration-300" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-4">Support</h4>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant hover:text-primary underline decoration-primary/30 underline-offset-4 transition-all duration-300" href="#">Shipping Info</a></li>
+<li><a class="text-on-surface-variant hover:text-primary underline decoration-primary/30 underline-offset-4 transition-all duration-300" href="#">Returns</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-4">Newsletter</h4>
+<div class="flex gap-2">
+<input class="bg-surface-container-low border-none rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-primary" placeholder="Email address" type="email"/>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg"><span class="material-symbols-outlined">send</span></button>
+</div>
+</div>
+<div class="col-span-full border-t border-outline-variant pt-lg mt-lg text-center text-on-surface-variant text-label-md">
+                © 2024 PureAqua Premium Water. All rights reserved.
+            </div>
+</div>
+</footer>
+<script>
+        // Gallery Filter Logic
+        const filterBtns = document.querySelectorAll('[data-filter]');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state
+                filterBtns.forEach(b => b.classList.remove('active-filter'));
+                btn.classList.add('active-filter');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.classList.remove('hidden');
+                        item.classList.add('animate-fade-in');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.getElementById('close-lightbox');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightbox.classList.remove('hidden');
+                lightbox.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Add simple fade animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .animate-fade-in {
+                animation: fadeIn 0.4s ease-out forwards;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body></html>

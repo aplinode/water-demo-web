@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PureAqua | Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#e5e2e1",
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-primary-fixed": "#001a40",
+                    "on-surface-variant": "#414754",
+                    "surface-dim": "#dcd9d9",
+                    "background": "#fcf9f8",
+                    "on-tertiary-fixed": "#001f2a",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#bee9ff",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#68d3ff",
+                    "on-secondary-container": "#003a5e",
+                    "outline": "#717786",
+                    "on-tertiary-fixed-variant": "#004d64",
+                    "primary": "#0059ba",
+                    "secondary-container": "#1ea8ff",
+                    "on-background": "#1c1b1b",
+                    "on-tertiary-container": "#fbfdff",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#006481",
+                    "surface-container-high": "#eae7e7",
+                    "secondary-fixed-dim": "#96cbff",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#f6f3f2",
+                    "inverse-surface": "#313030",
+                    "on-secondary-fixed": "#001d33",
+                    "surface-container": "#f0eded",
+                    "outline-variant": "#c1c6d7",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#fcf9f8",
+                    "primary-container": "#0071e9",
+                    "secondary": "#00639b",
+                    "surface-variant": "#e5e2e1",
+                    "surface-tint": "#005bbf",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#007ea2",
+                    "primary-fixed-dim": "#acc7ff",
+                    "on-primary-container": "#fefcff",
+                    "on-secondary-fixed-variant": "#004a76",
+                    "inverse-primary": "#acc7ff",
+                    "primary-fixed": "#d7e2ff",
+                    "on-primary-fixed-variant": "#004492",
+                    "on-surface": "#1c1b1b",
+                    "secondary-fixed": "#cee5ff",
+                    "surface": "#fcf9f8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "xs": "4px",
+                    "gutter": "24px",
+                    "md": "24px",
+                    "margin-desktop": "64px",
+                    "lg": "48px",
+                    "sm": "12px",
+                    "base": "8px",
+                    "xl": "80px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "title-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .chart-bar {
+            transition: height 1s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+<div class="flex h-screen overflow-hidden">
+<!-- SideNavBar Component -->
+<aside class="bg-surface-container-lowest dark:bg-surface-container-low h-full w-64 fixed left-0 top-0 flex flex-col py-base shadow-xl z-50">
+<div class="px-6 py-8">
+<h1 class="text-headline-lg-mobile font-headline-lg-mobile text-primary">PureAqua</h1>
+<p class="text-on-surface-variant font-label-md text-label-md mt-1">Premium Hydration</p>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<!-- Home is Active -->
+<a class="bg-secondary-container text-on-secondary-container rounded-lg px-4 py-3 flex items-center gap-3 active:opacity-80 transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="text-on-surface-variant px-4 py-3 flex items-center gap-3 hover:bg-surface-container-high transition-colors active:opacity-80" href="#">
+<span class="material-symbols-outlined">info</span>
+<span class="font-label-md text-label-md">About</span>
+</a>
+<a class="text-on-surface-variant px-4 py-3 flex items-center gap-3 hover:bg-surface-container-high transition-colors active:opacity-80" href="#">
+<span class="material-symbols-outlined">water_drop</span>
+<span class="font-label-md text-label-md">Products</span>
+</a>
+<a class="text-on-surface-variant px-4 py-3 flex items-center gap-3 hover:bg-surface-container-high transition-colors active:opacity-80" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-label-md text-label-md">Delivery</span>
+</a>
+<a class="text-on-surface-variant px-4 py-3 flex items-center gap-3 hover:bg-surface-container-high transition-colors active:opacity-80" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-label-md text-label-md">FAQ</span>
+</a>
+</nav>
+<div class="px-4 py-6 border-t border-outline-variant">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3 rounded-lg shadow-sm hover:opacity-90 transition-all active:scale-95">
+                    Order Now
+                </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 overflow-y-auto px-margin-desktop py-lg">
+<!-- Header Area -->
+<header class="flex justify-between items-center mb-xl">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Dashboard Overview</h2>
+<p class="text-on-surface-variant font-body-md text-body-md">Monitoring hydration performance &amp; logistics.</p>
+</div>
+<div class="flex gap-4 items-center">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary text-body-md" placeholder="Search data..." type="text"/>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-container-high text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-primary-fixed overflow-hidden border-2 border-primary">
+<img alt="Admin Profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a professional male manager in a crisp white shirt, clean-shaven and smiling confidently. The lighting is bright and high-key, reflecting a minimalist and professional corporate office environment. The overall aesthetic is clean, trustworthy, and aligned with a premium hydration brand's corporate identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGTBPiDuAezTS1PWund86TqYY32ocuytWeKeIb-SuYDNlo-CcI4lkvLrwpZBr4yuODDruAE7_rsh4oXKIwEvDLNA3qEGSarZAIPvHq-XOn4EHVA94Te5iyf-syw9ZxsGsj89tzfAPVlI6QKzMKvmQPJLFFwlPqxeFF_QFozSmU0HygV8pmbjnQ1Xl2cGkLlmKtKJF7BcCIifL4bHUr5h-OwQwHCf7DLnI-IzyELLPub-n3erl3xh_zGZRf0UesDETxusA6rBQz7bA"/>
+</div>
+</div>
+</header>
+<!-- Analytics Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-xl">
+<!-- Card: Total Orders -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_4px_20px_rgba(11,125,255,0.04)] hover:shadow-[0_4px_20px_rgba(11,125,255,0.08)] transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-primary-fixed text-primary rounded-lg">
+<span class="material-symbols-outlined">shopping_cart</span>
+</div>
+<span class="text-primary font-bold text-label-md">+12%</span>
+</div>
+<h3 class="text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">Total Orders</h3>
+<p class="text-headline-lg font-headline-lg mt-1">1,284</p>
+<div class="mt-4 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-3/4"></div>
+</div>
+</div>
+<!-- Card: Total Customers -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_4px_20px_rgba(11,125,255,0.04)] hover:shadow-[0_4px_20px_rgba(11,125,255,0.08)] transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-secondary-fixed text-secondary rounded-lg">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<span class="text-secondary font-bold text-label-md">+5%</span>
+</div>
+<h3 class="text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">Total Customers</h3>
+<p class="text-headline-lg font-headline-lg mt-1">856</p>
+<div class="mt-4 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-1/2"></div>
+</div>
+</div>
+<!-- Card: Pending Deliveries -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_4px_20px_rgba(11,125,255,0.04)] hover:shadow-[0_4px_20px_rgba(11,125,255,0.08)] transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-tertiary-fixed text-tertiary rounded-lg">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<span class="text-error font-bold text-label-md">High</span>
+</div>
+<h3 class="text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">Pending Deliveries</h3>
+<p class="text-headline-lg font-headline-lg mt-1">42</p>
+<div class="mt-4 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-1/4"></div>
+</div>
+</div>
+<!-- Card: Products Available -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_4px_20px_rgba(11,125,255,0.04)] hover:shadow-[0_4px_20px_rgba(11,125,255,0.08)] transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-surface-container-highest text-on-surface-variant rounded-lg">
+<span class="material-symbols-outlined">inventory_2</span>
+</div>
+<span class="text-on-surface-variant font-bold text-label-md">Stable</span>
+</div>
+<h3 class="text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">Inventory Items</h3>
+<p class="text-headline-lg font-headline-lg mt-1">18</p>
+<div class="mt-4 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-on-surface-variant w-full"></div>
+</div>
+</div>
+</div>
+<!-- Charts & Summary Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Performance Chart -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-lg rounded-xl shadow-[0_4px_20px_rgba(11,125,255,0.04)]">
+<div class="flex justify-between items-center mb-lg">
+<h3 class="text-title-md font-title-md">Weekly Delivery Performance</h3>
+<div class="flex gap-2">
+<button class="px-3 py-1 bg-surface-container-low text-label-md font-label-md rounded-lg">Daily</button>
+<button class="px-3 py-1 bg-primary text-on-primary text-label-md font-label-md rounded-lg">Weekly</button>
+</div>
+</div>
+<div class="h-64 flex items-end justify-between gap-4 px-4">
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary-container/20 rounded-t-lg relative flex items-end h-full">
+<div class="chart-bar w-full bg-primary rounded-t-lg" style="height: 60%"></div>
+</div>
+<span class="text-label-md font-label-md text-on-surface-variant">Mon</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary-container/20 rounded-t-lg relative flex items-end h-full">
+<div class="chart-bar w-full bg-primary rounded-t-lg" style="height: 85%"></div>
+</div>
+<span class="text-label-md font-label-md text-on-surface-variant">Tue</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary-container/20 rounded-t-lg relative flex items-end h-full">
+<div class="chart-bar w-full bg-primary rounded-t-lg" style="height: 45%"></div>
+</div>
+<span class="text-label-md font-label-md text-on-surface-variant">Wed</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary-container/20 rounded-t-lg relative flex items-end h-full">
+<div class="chart-bar w-full bg-primary rounded-t-lg" style="height: 95%"></div>
+</div>
+<span class="text-label-md font-label-md text-on-surface-variant">Thu</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary-container/20 rounded-t-lg relative flex items-end h-full">
+<div class="chart-bar w-full bg-primary rounded-t-lg" style="height: 70%"></div>
+</div>
+<span class="text-label-md font-label-md text-on-surface-variant">Fri</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary-container/20 rounded-t-lg relative flex items-end h-full">
+<div class="chart-bar w-full bg-secondary rounded-t-lg" style="height: 30%"></div>
+</div>
+<span class="text-label-md font-label-md text-on-surface-variant">Sat</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary-container/20 rounded-t-lg relative flex items-end h-full">
+<div class="chart-bar w-full bg-secondary rounded-t-lg" style="height: 20%"></div>
+</div>
+<span class="text-label-md font-label-md text-on-surface-variant">Sun</span>
+</div>
+</div>
+</div>
+<!-- Recent Activity/Logistics -->
+<div class="bg-surface-container-lowest p-lg rounded-xl shadow-[0_4px_20px_rgba(11,125,255,0.04)]">
+<h3 class="text-title-md font-title-md mb-lg">Active Deliveries</h3>
+<div class="space-y-6">
+<!-- Active Delivery 1 -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center bg-primary-fixed text-primary">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div class="flex-1 border-b border-outline-variant pb-4">
+<div class="flex justify-between items-center mb-1">
+<h4 class="font-label-md text-label-md">Sarah J. - Premium Home</h4>
+<span class="text-xs font-bold text-primary px-2 py-0.5 bg-primary-fixed rounded-full">On Way</span>
+</div>
+<p class="text-xs text-on-surface-variant">5 Gallon Bulk • Arriving in 12 mins</p>
+</div>
+</div>
+<!-- Active Delivery 2 -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center bg-tertiary-fixed text-tertiary">
+<span class="material-symbols-outlined">apartment</span>
+</div>
+<div class="flex-1 border-b border-outline-variant pb-4">
+<div class="flex justify-between items-center mb-1">
+<h4 class="font-label-md text-label-md">TechCorp HQ - Office</h4>
+<span class="text-xs font-bold text-tertiary px-2 py-0.5 bg-tertiary-fixed rounded-full">Loading</span>
+</div>
+<p class="text-xs text-on-surface-variant">24 Cases Mineral • Dispatch Area 4</p>
+</div>
+</div>
+<!-- Active Delivery 3 -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined">done_all</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<h4 class="font-label-md text-label-md">David M. - Residential</h4>
+<span class="text-xs font-bold text-on-surface-variant px-2 py-0.5 bg-surface-container-high rounded-full">Delivered</span>
+</div>
+<p class="text-xs text-on-surface-variant">Routine Refill • Completed 14:02</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 text-primary font-label-md text-label-md py-2 border border-primary rounded-lg hover:bg-primary-fixed transition-colors">
+                        View All Deliveries
+                    </button>
+</div>
+</div>
+<!-- Detailed Data Table Section -->
+<section class="mt-xl bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(11,125,255,0.04)] overflow-hidden">
+<div class="px-lg py-md border-b border-outline-variant flex justify-between items-center">
+<h3 class="text-title-md font-title-md">Inventory Status</h3>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 text-label-md font-label-md text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[20px]">filter_list</span> Filter
+                        </button>
+<button class="flex items-center gap-2 text-label-md font-label-md text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[20px]">download</span> Export
+                        </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low text-on-surface-variant font-label-md text-label-md">
+<tr>
+<th class="px-lg py-4">Product Name</th>
+<th class="px-lg py-4">Category</th>
+<th class="px-lg py-4">Current Stock</th>
+<th class="px-lg py-4">Status</th>
+<th class="px-lg py-4">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-lg py-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-white p-1 border border-outline-variant">
+<img alt="Water Bottle" class="w-full h-full object-contain" data-alt="High-resolution product shot of a 5-gallon blue polycarbonate water jug, perfectly clean and filled with crystal-clear water. The background is a stark, minimalist white, creating a high-contrast and professional look. Soft studio lighting highlights the texture of the bottle and the purity of the water inside, reflecting the PureAqua brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEyGPjSkbAyge2FITt1xrpQeWSP9UV0DU_NRxefT6QewjUf0HScGNR0SWF8odJjlqODlfO6odtp6U6T-s0byK9wA0Vfbh0hWa1mbT9empb9uV3lhDRuq-eWq3RE4ivdAS_iELv0IP_1NrVcqQEywkQJWsEh22adEkNMSmTXtetgDKH-U5N4hsJlLvhzK9s2kUmcdNJvWCq2AoTPmDcJQth8Ch5FVO68bmhFGwVqOgVHM01ZC_vTfdN7HmqDsxviQI97sxo5PwQL9I"/>
+</div>
+<span class="font-body-md text-body-md font-medium">Pure 5-Gallon Refill</span>
+</td>
+<td class="px-lg py-4 text-body-md text-on-surface-variant">Bulk Container</td>
+<td class="px-lg py-4 text-body-md">452 Units</td>
+<td class="px-lg py-4">
+<span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold uppercase">In Stock</span>
+</td>
+<td class="px-lg py-4">
+<button class="text-primary hover:underline font-label-md text-label-md">Edit</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-lg py-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-white p-1 border border-outline-variant">
+<img alt="Mineral Water Pack" class="w-full h-full object-contain" data-alt="Professional studio photograph of a 24-pack of small mineral water bottles wrapped in clean, transparent plastic. The scene is bright and airy with high-key lighting, emphasizing a hygienic and corporate aesthetic. The bottles are perfectly arranged, showcasing the brand's reliability and precision in product presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0UpEQLrGGLsb7Nfhb8BcnMulJrM1DvuNNByEegxsGUIHFDhCS3Xk7kQ1WAuh6LvNWQFnfru8EnDhClRHJ9nhs6OiVaoIoN7unMUcJl_dGebDm3SyPUQh2erxADG2PlzN1JKzUs-kDts9XXiqODj7iDtZzFDgTjvaPeYtVUAscBWhImKMiMhgqZKDN3m8S8Vb7_EgiHLoHluxtiXRcNNNtQ2YSGru0u8bCb-H63wyqTNX8NiZHskYDUuBB7YuS0PpHLc7Yo4i3B_8"/>
+</div>
+<span class="font-body-md text-body-md font-medium">Mineral Case (24x)</span>
+</td>
+<td class="px-lg py-4 text-body-md text-on-surface-variant">Cases</td>
+<td class="px-lg py-4 text-body-md">84 Units</td>
+<td class="px-lg py-4">
+<span class="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-bold uppercase">Low Stock</span>
+</td>
+<td class="px-lg py-4">
+<button class="text-primary hover:underline font-label-md text-label-md">Edit</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-lg py-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-white p-1 border border-outline-variant">
+<img alt="Tabletop Dispenser" class="w-full h-full object-contain" data-alt="Close-up of a modern, sleek white tabletop water dispenser with chrome accents. The product is placed on a pristine white surface with soft ambient shadows. The lighting is clean and focused, highlighting the high-tech filtration design and minimalist aesthetic. This visual reinforces the theme of precision and reliability for corporate clients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQawnidzAPqgR1OZlDtLGOMebztI_P4Fdki_7c037kHInRVKxBCxLfk0sqGfO06uriBctXJuoMpHZEevxWTiVeUFdkNSPYTH4EEvZKRBEEsXz5P3LaZZ5vZ2boBgli4ACFWgr3E-UbnaUuIDdj0_SMJAh1v26p9Gi3gO7pfJoxJrVLjr3aNdhwyuPSkqIATVrK8ekTatLlPZ8oljvQDHWbF7H7AK3IL0xwoiFzofeiJTObucf-1DZyNCCA3_kg0Pq3PMbNcoeEMtk"/>
+</div>
+<span class="font-body-md text-body-md font-medium">Eco Tabletop Dispenser</span>
+</td>
+<td class="px-lg py-4 text-body-md text-on-surface-variant">Hardware</td>
+<td class="px-lg py-4 text-body-md">12 Units</td>
+<td class="px-lg py-4">
+<span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold uppercase">In Stock</span>
+</td>
+<td class="px-lg py-4">
+<button class="text-primary hover:underline font-label-md text-label-md">Edit</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-lg py-4 bg-surface-container-low flex justify-between items-center text-label-md font-label-md text-on-surface-variant">
+<span>Showing 3 of 18 products</span>
+<div class="flex gap-2">
+<button class="p-1 rounded hover:bg-surface-container-high disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Footer Area -->
+<footer class="mt-xl py-lg border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4 text-on-surface-variant">
+<div class="font-display-lg text-title-md text-primary">PureAqua</div>
+<p class="font-body-md text-body-md">© 2024 PureAqua Premium Water. All rights reserved.</p>
+<div class="flex gap-gutter">
+<a class="hover:text-primary transition-colors font-body-md" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors font-body-md" href="#">Terms</a>
+</div>
+</footer>
+</main>
+</div>
+<!-- Floating Action Button (Only on Dashboard for quick actions) -->
+<button class="fixed bottom-margin-desktop right-margin-desktop w-14 h-14 bg-primary text-on-primary rounded-full shadow-xl flex items-center justify-center hover:scale-105 active:scale-95 transition-all group z-50">
+<span class="material-symbols-outlined text-[28px]">add</span>
+<span class="absolute right-full mr-4 bg-surface-container-highest text-on-surface px-4 py-2 rounded-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-md">
+            Create New Order
+        </span>
+</button>
+<script>
+        // Micro-interactions and Atmospheric Effects
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animate chart bars on load
+            const bars = document.querySelectorAll('.chart-bar');
+            bars.forEach(bar => {
+                const targetHeight = bar.style.height;
+                bar.style.height = '0%';
+                setTimeout(() => {
+                    bar.style.height = targetHeight;
+                }, 300);
+            });
+
+            // Active state logic for sidebar links (already set in HTML but adding click handler for demo)
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    navLinks.forEach(l => {
+                        l.classList.remove('bg-secondary-container', 'text-on-secondary-container');
+                        l.classList.add('text-on-surface-variant');
+                    });
+                    link.classList.add('bg-secondary-container', 'text-on-secondary-container');
+                    link.classList.remove('text-on-surface-variant');
+                });
+            });
+        });
+    </script>
+</body></html>

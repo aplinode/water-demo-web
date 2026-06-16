@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Products | PureAqua Premium Hydration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e5e2e1",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-primary-fixed": "#001a40",
+                        "on-surface-variant": "#414754",
+                        "surface-dim": "#dcd9d9",
+                        "background": "#fcf9f8",
+                        "on-tertiary-fixed": "#001f2a",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#bee9ff",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#68d3ff",
+                        "on-secondary-container": "#003a5e",
+                        "outline": "#717786",
+                        "on-tertiary-fixed-variant": "#004d64",
+                        "primary": "#0059ba",
+                        "secondary-container": "#1ea8ff",
+                        "on-background": "#1c1b1b",
+                        "on-tertiary-container": "#fbfdff",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#006481",
+                        "surface-container-high": "#eae7e7",
+                        "secondary-fixed-dim": "#96cbff",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "inverse-surface": "#313030",
+                        "on-secondary-fixed": "#001d33",
+                        "surface-container": "#f0eded",
+                        "outline-variant": "#c1c6d7",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#fcf9f8",
+                        "primary-container": "#0071e9",
+                        "secondary": "#00639b",
+                        "surface-variant": "#e5e2e1",
+                        "surface-tint": "#005bbf",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#007ea2",
+                        "primary-fixed-dim": "#acc7ff",
+                        "on-primary-container": "#fefcff",
+                        "on-secondary-fixed-variant": "#004a76",
+                        "inverse-primary": "#acc7ff",
+                        "primary-fixed": "#d7e2ff",
+                        "on-primary-fixed-variant": "#004492",
+                        "on-surface": "#1c1b1b",
+                        "secondary-fixed": "#cee5ff",
+                        "surface": "#fcf9f8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "md": "24px",
+                        "margin-desktop": "64px",
+                        "lg": "48px",
+                        "sm": "12px",
+                        "base": "8px",
+                        "xl": "80px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "title-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .premium-card-shadow {
+            box-shadow: 0 4px 20px -2px rgba(11, 125, 255, 0.04);
+        }
+        .premium-card-shadow:hover {
+            box-shadow: 0 10px 25px -4px rgba(11, 125, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopNavBar -->
+<header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+<nav class="flex justify-between items-center px-margin-desktop h-20 w-full max-w-[1200px] mx-auto">
+<div class="text-title-md font-display-lg font-bold text-primary">PureAqua</div>
+<div class="hidden md:flex items-center gap-xl">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Services</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md" href="#">Products</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Quality</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md active:scale-95 transition-transform hover:bg-primary-container">
+                Order Now
+            </button>
+</nav>
+</header>
+<main class="relative">
+<!-- Hero Decorative Shader -->
+<div class="absolute inset-0 h-[400px] overflow-hidden -z-10 opacity-30">
+
+</div>
+<!-- Hero Section -->
+<section class="max-w-[1200px] mx-auto px-margin-desktop pt-xl pb-lg">
+<div class="max-w-2xl">
+<h1 class="font-display-lg text-display-lg text-primary mb-md">Our Products</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    Pristine hydration solutions for your home and workplace. Every drop is filtered through our advanced 7-stage purification process to ensure maximum purity and crisp taste.
+                </p>
+</div>
+</section>
+<!-- Product Catalog -->
+<section class="max-w-[1200px] mx-auto px-margin-desktop pb-xl">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Product Card 1: 19L Bottle -->
+<article class="bg-surface-container-lowest rounded-xl premium-card-shadow overflow-hidden flex flex-col group transition-all duration-300">
+<div class="aspect-[4/3] relative overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A professional studio photograph of a large 19-liter polycarbonate water bottle filled with crystal clear, pure water. The bottle sits on a reflective white surface against a minimalist bright blue and white background. Soft high-key lighting highlights the clarity and pristine quality of the water, embodying a corporate modern and hygienic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSdtsjbO-TYITvIAC7oRXIahHmOzwJjXLmSMH5pTLDTK8V4n-dudUVzmPgZzXk_xypdUPUxjNh4IKw-XgzyzAJfNR7oSzxjtb1-yu6hcQQ1Yoz0_vYFdhdIYcmGjyTOswNdyBu8cy1MK_8U8xjEgDeHPYlk7-Nmex0fipZPI1dpl_rPVVnT9YUxiluCj-iJXxYAnSA2iL9p0J77ZrwrwnSI6PlIdbFprEi1FuVgBiLZOlMW1K32ikq6PR8BWEEo5fe914ns-JGs7c"/>
+<span class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-md">Available</span>
+</div>
+<div class="p-base md:p-8 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-base">
+<h3 class="font-title-md text-title-md text-primary">19 Liter Premium Bottle</h3>
+<span class="font-title-md text-title-md text-on-surface">$8.50</span>
+</div>
+<p class="text-on-surface-variant font-label-md mb-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">water_drop</span>
+                            19L Capacity
+                        </p>
+<ul class="space-y-2 mb-lg flex-grow">
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Triple-sealed safety cap
+                            </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                BPA-free food grade material
+                            </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                UV-protected container
+                            </li>
+</ul>
+<button class="w-full bg-surface-container-low text-primary border border-outline-variant py-3 rounded-lg font-label-md hover:bg-primary hover:text-on-primary hover:border-primary transition-all active:scale-[0.98]">
+                            Order Now
+                        </button>
+</div>
+</article>
+<!-- Product Card 2: Dispenser -->
+<article class="bg-surface-container-lowest rounded-xl premium-card-shadow overflow-hidden flex flex-col group transition-all duration-300">
+<div class="aspect-[4/3] relative overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A sleek, modern white and metallic water dispenser standing in a bright, clean minimalist office setting. The dispenser features professional chrome fixtures and a top-mounted clear 19-liter water bottle. The lighting is bright and airy, emphasizing the hygiene and reliability of the appliance in a corporate environment. The overall style is minimal and high-contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb7PriNIWp7uvp5Qsv1Y_5okGTubIqt5tZgMwOVoDXpKZ9OxyAYx5DfxmWj4WNxZqXJuhkVpSMbgFuu_sSEs03GJ3aRQ-NUHKwhiwOqOF5zQRhrbRKpMwUYUQhiPuz0Ql_3imdKh_RnpIyQqnhUHg28EFjguxKkoKBcONQvzy6uffEwoXT0zk6eWCtfc9Zqe2Y5upzNcKnPv6OlNGrPw6mJn6JA8PGa3ym6CE59jBqoq6olw-kGOuQKSh42_zVy-a0D2fQ-pkXyyo"/>
+<span class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full font-label-md">Limited Stock</span>
+</div>
+<div class="p-base md:p-8 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-base">
+<h3 class="font-title-md text-title-md text-primary">Pro Series Dispenser</h3>
+<span class="font-title-md text-title-md text-on-surface">$145.00</span>
+</div>
+<p class="text-on-surface-variant font-label-md mb-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">settings</span>
+                            Hot &amp; Cold Features
+                        </p>
+<ul class="space-y-2 mb-lg flex-grow">
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                High-efficiency compressor
+                            </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Child safety lock for hot water
+                            </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Energy Star certified
+                            </li>
+</ul>
+<button class="w-full bg-surface-container-low text-primary border border-outline-variant py-3 rounded-lg font-label-md hover:bg-primary hover:text-on-primary hover:border-primary transition-all active:scale-[0.98]">
+                            Order Now
+                        </button>
+</div>
+</article>
+<!-- Product Card 3: Office Plan -->
+<article class="bg-surface-container-lowest rounded-xl premium-card-shadow overflow-hidden flex flex-col group transition-all duration-300 ring-2 ring-primary">
+<div class="aspect-[4/3] relative overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A clean and professional office breakout area with a modern glass table and PureAqua water bottles neatly arranged. The background shows a high-end corporate environment with abundant natural light and sleek minimalist furniture. Professional male staff in clean branded uniforms can be seen in the distance, conveying a sense of reliability and expert service. The color palette is strictly blue and white." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzvtwMWHhsWiQY2RHXwfF_1yB4yhmxCRyDnQckJsyMo3IG24OqRbHEM6SPzWObiQxjVSWAL-YE36Qxxl1xUkP_37a4_mtiscFdgPiCdU9w98A5P_50ol5i3oQQIhlPL7JpUuNjAUXvmEJhaDp97lvvcjS8_kUWpGI1JAXjaRF4qydVwUsfc5cYeIuZ9ZsJjDGQJNDmCIrVc7CH__BIqUy9dW9np8ZwdPcyf1a_oPjw0smdR2ZGVfYvCndJeahnDDEODZTLnMvLjaw"/>
+<span class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 rounded-full font-label-md">Best Value</span>
+</div>
+<div class="p-base md:p-8 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-base">
+<h3 class="font-title-md text-title-md text-primary">Office Supply Plan</h3>
+<span class="font-title-md text-title-md text-on-surface">$120<span class="text-sm font-normal">/mo</span></span>
+</div>
+<p class="text-on-surface-variant font-label-md mb-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">business</span>
+                            15 Bottles / Month
+                        </p>
+<ul class="space-y-2 mb-lg flex-grow">
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Weekly delivery schedule
+                            </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Free dispenser maintenance
+                            </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Dedicated account manager
+                            </li>
+</ul>
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-label-md hover:bg-primary-container transition-all active:scale-[0.98]">
+                            Select Plan
+                        </button>
+</div>
+</article>
+<!-- Product Card 4: Commercial Plan -->
+<article class="bg-surface-container-lowest rounded-xl premium-card-shadow overflow-hidden flex flex-col group transition-all duration-300">
+<div class="aspect-[4/3] relative overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A wide-angle professional shot of a modern clean-tech warehouse facility where organized rows of large water bottles are stacked efficiently. The floors are polished and reflecting the bright ceiling lights. A professional male worker in a crisp blue uniform is inspecting the stock. The atmosphere is one of high-tech precision and absolute hygiene, focusing on corporate-scale supply chains." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8UA6dHIqiSypKXnUUtHyIi4l5gdkQN_6Ic3s9NvK2HqX-4x_wYak5IUHiF0ckvnZcZvHbUr81WATbqrz-KRUbYUoG3eh7468rr9JHrfws14bGeJSDiCKdnsNY_hY4CH__60pyojy8PMnUs5T7k-I0wNRIGkBj_Y05F9y-Zdaevl-L_6PcrwJj11blZxFHjD3F6xdV_C9lBwb9dryzt6CQiKLZkM6CjaEyTCv0_-TQwIWwKHuF4wne15xWYfDIzpNTvvvk0CtPvRI"/>
+<span class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-md">Available</span>
+</div>
+<div class="p-base md:p-8 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-base">
+<h3 class="font-title-md text-title-md text-primary">Commercial Supply</h3>
+<span class="font-title-md text-title-md text-on-surface">Custom</span>
+</div>
+<p class="text-on-surface-variant font-label-md mb-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">factory</span>
+                            Bulk Enterprise Logic
+                        </p>
+<ul class="space-y-2 mb-lg flex-grow">
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Volume-based tiered pricing
+                            </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                24/7 priority support line
+                            </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Customized logistics routing
+                            </li>
+</ul>
+<button class="w-full bg-surface-container-low text-primary border border-outline-variant py-3 rounded-lg font-label-md hover:bg-primary hover:text-on-primary hover:border-primary transition-all active:scale-[0.98]">
+                            Request Quote
+                        </button>
+</div>
+</article>
+<!-- Product Card 5: Out of Stock Example -->
+<article class="bg-surface-container-lowest rounded-xl premium-card-shadow overflow-hidden flex flex-col group opacity-75 grayscale transition-all duration-300">
+<div class="aspect-[4/3] relative overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover" data-alt="A modern minimalist lifestyle shot of small, elegant glass water bottles arranged on a white marble countertop. The lighting is soft and natural, emphasizing the clarity of the glass and water. The background is a clean, upscale domestic environment with professional aesthetics. No people are present, focusing entirely on the product's design and purity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCXvgBLLCQIn7_Vgr-Mdtw7CgkGqe3PNlFqxfdlcYUHQBBZAhKPId_ELtQObGyAUGaXr6dNN3wJQjOXFdNoD8icemGn1nQR_R1ChfXsFc1pS8MvF0E_gDYhv4I6uBRNigEX_s7BcAUoXD1liMopXEDe-n8q7Oi-bgFZvjk5O96wexVfGwb9uHQ_KfBiPzsY2eWnVbj1CC4l-kHkGNMuJ2tGPgAwTp4X8wGQTOIooNA9pEA_oMLBjNaBoXJdHZvJHZc2BmT8TeqTqs"/>
+<span class="absolute top-4 left-4 bg-error-container text-on-error-container px-3 py-1 rounded-full font-label-md">Out Of Stock</span>
+</div>
+<div class="p-base md:p-8 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-base">
+<h3 class="font-title-md text-title-md text-primary">Eco Glass Pack (6x)</h3>
+<span class="font-title-md text-title-md text-on-surface">$18.00</span>
+</div>
+<p class="text-on-surface-variant font-label-md mb-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">eco</span>
+                            750ml Premium Glass
+                        </p>
+<ul class="space-y-2 mb-lg flex-grow">
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                100% recyclable glass
+                            </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Decorative wood-grain caps
+                            </li>
+</ul>
+<button class="w-full bg-surface-container-high text-on-surface-variant py-3 rounded-lg font-label-md cursor-not-allowed" disabled="">
+                            Notify Me
+                        </button>
+</div>
+</article>
+<!-- Custom Request Card -->
+<article class="bg-primary/5 border-2 border-dashed border-primary/30 rounded-xl overflow-hidden flex flex-col justify-center items-center p-xl text-center group">
+<div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-md group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-primary text-4xl">add_circle</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mb-base">Need something else?</h3>
+<p class="text-on-surface-variant font-body-md mb-lg max-w-[200px]">We provide customized hydration solutions for events and special projects.</p>
+<button class="text-primary font-label-md underline underline-offset-4 hover:text-primary-container transition-colors">
+                        Contact Support
+                    </button>
+</article>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant mt-xl">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-xl max-w-[1200px] mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="text-title-md font-display-lg text-primary mb-md">PureAqua</div>
+<p class="text-on-surface-variant font-body-md">Setting the standard for premium hydration and service excellence since 2010.</p>
+</div>
+<div>
+<h4 class="font-title-md text-on-surface mb-md">Product Range</h4>
+<ul class="space-y-sm">
+<li><a class="text-on-surface-variant hover:text-primary underline decoration-primary/30 underline-offset-4 transition-all" href="#">Bulk Bottles</a></li>
+<li><a class="text-on-surface-variant hover:text-primary underline decoration-primary/30 underline-offset-4 transition-all" href="#">Office Dispensers</a></li>
+<li><a class="text-on-surface-variant hover:text-primary underline decoration-primary/30 underline-offset-4 transition-all" href="#">Filters &amp; Accessories</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-title-md text-on-surface mb-md">Quick Links</h4>
+<ul class="space-y-sm">
+<li><a class="text-on-surface-variant hover:text-primary underline decoration-primary/30 underline-offset-4 transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary underline decoration-primary/30 underline-offset-4 transition-all" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-primary underline decoration-primary/30 underline-offset-4 transition-all" href="#">Shipping Info</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-title-md text-on-surface mb-md">Connect</h4>
+<div class="flex gap-md">
+<a class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined">mail</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined">call</span>
+</a>
+</div>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto px-margin-desktop py-md border-t border-outline-variant text-center">
+<p class="text-on-surface-variant font-body-md">© 2024 PureAqua Premium Water. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        // Micro-interaction for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.classList.add('scale-95');
+            });
+            button.addEventListener('mouseup', () => {
+                button.classList.remove('scale-95');
+            });
+            button.addEventListener('mouseleave', () => {
+                button.classList.remove('scale-95');
+            });
+        });
+
+        // Atmospheric effect: gentle scroll fade
+        const cards = document.querySelectorAll('article');
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        cards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
+            observer.observe(card);
+        });
+    </script>
+</body></html>
