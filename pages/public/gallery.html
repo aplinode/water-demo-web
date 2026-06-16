@@ -128,16 +128,49 @@
 <div class="text-title-md font-display-lg font-bold text-primary dark:text-inverse-primary">PureAqua</div>
 <!-- Desktop Nav -->
 <div class="hidden md:flex items-center gap-8 font-body-md text-body-md">
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Services</a>
-<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Products</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Quality</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="../../index.html">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="services.html">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="products.html">Products</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="gallery.html">Gallery</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="quality.html">Quality</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="faq.html">FAQ</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="reviews.html">Reviews</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contact</a>
 </div>
-<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md active:scale-95 transition-transform">
-                Order Now
-            </button>
+<a class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md active:scale-95 transition-transform" href="order.html">Order Now</a>
+
+<button id="menuBtn" class="md:hidden text-on-surface-variant hover:text-primary p-2">
+  <span class="material-symbols-outlined text-3xl">menu</span>
+</button>
 </nav>
+<!-- Mobile Sidebar -->
+<div id="mobileSidebar" class="fixed inset-0 z-50 invisible md:hidden">
+  <div id="sidebarBackdrop" class="fixed inset-0 bg-black/40 opacity-0 transition-opacity duration-300"></div>
+  <div id="sidebarPanel" class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+    <div class="flex items-center justify-between px-6 h-20 border-b border-outline-variant/20">
+      <span class="text-title-md font-display-lg font-bold text-primary">PureAqua</span>
+      <button id="closeSidebar" class="text-on-surface-variant hover:text-primary p-2">
+        <span class="material-symbols-outlined text-3xl">close</span>
+      </button>
+    </div>
+    <nav class="flex-1 overflow-y-auto p-6 space-y-1">
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="../../index.html">Home</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="services.html">Services</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="products.html">Products</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="quality.html">Quality</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="faq.html">FAQ</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="gallery.html">Gallery</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="reviews.html">Reviews</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="contact.html">Contact</a>
+      <hr class="border-outline-variant/20 my-4">
+      <a class="flex items-center justify-center gap-2 bg-primary text-white py-3 px-6 rounded-full font-bold hover:bg-primary-container transition-colors" href="order.html">
+        <span class="material-symbols-outlined">shopping_cart</span>
+        Order Now
+      </a>
+    </nav>
+  </div>
+</div>
+
 </header>
 <main class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-xl">
 <!-- Hero Section -->
@@ -322,4 +355,34 @@
         `;
         document.head.appendChild(style);
     </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var menuBtn = document.getElementById('menuBtn');
+  var sidebar = document.getElementById('mobileSidebar');
+  var closeBtn = document.getElementById('closeSidebar');
+  var backdrop = document.getElementById('sidebarBackdrop');
+  var panel = document.getElementById('sidebarPanel');
+
+  if (!menuBtn || !sidebar) return;
+
+  function openSidebar() {
+    sidebar.classList.remove('invisible');
+    setTimeout(function() {
+      backdrop.classList.remove('opacity-0');
+      panel.classList.remove('translate-x-full');
+    }, 10);
+  }
+
+  function closeSidebar() {
+    backdrop.classList.add('opacity-0');
+    panel.classList.add('translate-x-full');
+    setTimeout(function() { sidebar.classList.add('invisible'); }, 300);
+  }
+
+  menuBtn.addEventListener('click', openSidebar);
+  if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+  if (backdrop) backdrop.addEventListener('click', closeSidebar);
+});
+</script>
 </body></html>

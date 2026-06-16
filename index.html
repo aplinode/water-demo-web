@@ -126,16 +126,49 @@
 <nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 w-full max-w-[1200px] mx-auto">
 <div class="text-title-md font-display-lg font-bold text-primary">PureAqua</div>
 <div class="hidden md:flex items-center gap-8">
-<a class="font-body-md text-primary font-bold border-b-2 border-primary pb-1" href="#">Home</a>
-<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Services</a>
-<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Products</a>
-<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Quality</a>
-<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+<a class="font-body-md text-primary font-bold border-b-2 border-primary pb-1" href="index.html">Home</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="pages/public/services.html">Services</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="pages/public/products.html">Products</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="pages/public/quality.html">Quality</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="pages/public/faq.html">FAQ</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="pages/public/gallery.html">Gallery</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="pages/public/reviews.html">Reviews</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="pages/public/contact.html">Contact</a>
 </div>
-<button class="bg-primary text-white px-6 py-2.5 rounded-lg font-label-md active:scale-95 transition-transform">
-                Order Now
-            </button>
+<a class="bg-primary text-white px-6 py-2.5 rounded-lg font-label-md active:scale-95 transition-transform" href="pages/public/order.html">Order Now</a>
+
+<button id="menuBtn" class="md:hidden text-on-surface-variant hover:text-primary p-2">
+  <span class="material-symbols-outlined text-3xl">menu</span>
+</button>
 </nav>
+<!-- Mobile Sidebar -->
+<div id="mobileSidebar" class="fixed inset-0 z-50 invisible md:hidden">
+  <div id="sidebarBackdrop" class="fixed inset-0 bg-black/40 opacity-0 transition-opacity duration-300"></div>
+  <div id="sidebarPanel" class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+    <div class="flex items-center justify-between px-6 h-20 border-b border-outline-variant/20">
+      <span class="text-title-md font-display-lg font-bold text-primary">PureAqua</span>
+      <button id="closeSidebar" class="text-on-surface-variant hover:text-primary p-2">
+        <span class="material-symbols-outlined text-3xl">close</span>
+      </button>
+    </div>
+    <nav class="flex-1 overflow-y-auto p-6 space-y-1">
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="index.html">Home</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="pages/public/services.html">Services</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="pages/public/products.html">Products</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="pages/public/quality.html">Quality</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="pages/public/faq.html">FAQ</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="pages/public/gallery.html">Gallery</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="pages/public/reviews.html">Reviews</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="pages/public/contact.html">Contact</a>
+      <hr class="border-outline-variant/20 my-4">
+      <a class="flex items-center justify-center gap-2 bg-primary text-white py-3 px-6 rounded-full font-bold hover:bg-primary-container transition-colors" href="pages/public/order.html">
+        <span class="material-symbols-outlined">shopping_cart</span>
+        Order Now
+      </a>
+    </nav>
+  </div>
+</div>
+
 </header>
 <main>
 <!-- Hero Section -->
@@ -153,12 +186,8 @@
                         Reliable and hygienic drinking water solutions for homes, offices, businesses, and commercial facilities. Experience hydration perfected.
                     </p>
 <div class="flex flex-wrap gap-4">
-<button class="bg-primary text-white px-8 py-4 rounded-xl font-title-md hover:bg-primary-container transition-all active:scale-95 shadow-lg shadow-primary/20">
-                            Order Now
-                        </button>
-<button class="bg-surface-container-low text-primary px-8 py-4 rounded-xl font-title-md hover:bg-surface-container-high transition-all border border-outline-variant">
-                            Learn More
-                        </button>
+<a class="bg-primary text-white px-8 py-4 rounded-xl font-title-md hover:bg-primary-container transition-all active:scale-95 shadow-lg shadow-primary/20" href="pages/public/order.html">Order Now</a>
+<a class="bg-surface-container-low text-primary px-8 py-4 rounded-xl font-title-md hover:bg-surface-container-high transition-all border border-outline-variant" href="pages/public/services.html">Learn More</a>
 </div>
 </div>
 </div>
@@ -264,7 +293,7 @@
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-lg text-white">
 <h3 class="font-title-md text-headline-lg mb-2">19L Standard Bottle</h3>
 <p class="font-body-md opacity-90 mb-4">Perfect for home and medium-sized offices.</p>
-<button class="bg-white text-primary px-6 py-2 rounded-lg w-fit font-label-md hover:bg-secondary-fixed transition-colors">Add to Cart</button>
+<a class="bg-white text-primary px-6 py-2 rounded-lg w-fit font-label-md hover:bg-secondary-fixed transition-colors" href="pages/public/order.html">Add to Cart</a>
 </div>
 </div>
 <!-- Dispenser -->
@@ -272,7 +301,7 @@
 <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A professional male technician in a clean corporate uniform installing a sleek, modern top-loading water dispenser in a bright, contemporary office environment. The scene is well-lit with natural light streaming through large windows. The focus is on the technician's clean, efficient work and the high-tech appearance of the water dispenser unit. The color palette is composed of professional grays, blues, and crisp whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7KMB1WAIgTwOMw0tRHDqgjIHNXeEY1roTTFKKJ2_vPHD0vCqhyDNtdlNWJH2eK5VjaGGBB0l0vd6ePJTHAm8BmBIP-1OHJU6YkMZVT_15I129TZKogDiK92pBVOon0vYhKhyx2YjxOfx_xVvDBy60IAOblrrSELciLxYZxYyelvqdK7YTZieZDMFFyybsiiNlKhC2lOZ1_YbG0zbLVXB4tGPW-B16tcJXmvMMXTt7P3pRwr-fZndeEsFRfBdDztWuQnKsalHez28"/>
 <div class="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 <h3 class="font-title-md mb-2">Office Supply Package</h3>
-<button class="bg-primary text-white px-6 py-2 rounded-lg font-label-md">Learn More</button>
+<a class="bg-primary text-white px-6 py-2 rounded-lg font-label-md" href="pages/public/services.html">Learn More</a>
 </div>
 </div>
 <!-- Commercial Package -->
@@ -410,9 +439,7 @@
                     Join over 5,000 active subscribers who trust PureAqua for their daily hydration. Pure, safe, and delivered with a smile.
                 </p>
 <div class="flex flex-col md:flex-row gap-gutter justify-center items-center">
-<button class="bg-white text-primary px-10 py-5 rounded-full font-title-md shadow-xl hover:scale-105 active:scale-95 transition-all">
-                        Get Started Now
-                    </button>
+<a class="bg-white text-primary px-10 py-5 rounded-full font-title-md shadow-xl hover:scale-105 active:scale-95 transition-all" href="pages/public/order.html">Get Started Now</a>
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined">call</span>
 <span class="font-title-md text-xl">+1 (800) PURE-AQUA</span>
@@ -436,19 +463,19 @@
 <div>
 <h4 class="font-title-md mb-6">Our Services</h4>
 <ul class="space-y-4">
-<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Residential Delivery</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Corporate Supply</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Events &amp; Catering</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Dispenser Maintenance</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="pages/public/services.html">Residential Delivery</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="pages/public/services.html">Corporate Supply</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="pages/public/services.html">Events &amp; Catering</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="pages/public/services.html">Dispenser Maintenance</a></li>
 </ul>
 </div>
 <div>
 <h4 class="font-title-md mb-6">Company</h4>
 <ul class="space-y-4">
-<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">About Us</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Quality Standard</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="pages/public/pages.html">About Us</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="pages/public/quality.html">Quality Standard</a></li>
 <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Sustainability</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="pages/public/contact.html">Contact Us</a></li>
 </ul>
 </div>
 <div>
@@ -476,4 +503,34 @@
             }
         });
     </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var menuBtn = document.getElementById('menuBtn');
+  var sidebar = document.getElementById('mobileSidebar');
+  var closeBtn = document.getElementById('closeSidebar');
+  var backdrop = document.getElementById('sidebarBackdrop');
+  var panel = document.getElementById('sidebarPanel');
+
+  if (!menuBtn || !sidebar) return;
+
+  function openSidebar() {
+    sidebar.classList.remove('invisible');
+    setTimeout(function() {
+      backdrop.classList.remove('opacity-0');
+      panel.classList.remove('translate-x-full');
+    }, 10);
+  }
+
+  function closeSidebar() {
+    backdrop.classList.add('opacity-0');
+    panel.classList.add('translate-x-full');
+    setTimeout(function() { sidebar.classList.add('invisible'); }, 300);
+  }
+
+  menuBtn.addEventListener('click', openSidebar);
+  if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+  if (backdrop) backdrop.addEventListener('click', closeSidebar);
+});
+</script>
 </body></html>

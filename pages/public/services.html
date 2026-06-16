@@ -126,16 +126,49 @@
 <nav class="flex justify-between items-center px-margin-desktop h-full w-full max-w-[1200px] mx-auto">
 <div class="text-title-md font-display-lg font-bold text-primary">PureAqua</div>
 <div class="hidden md:flex gap-md items-center">
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Home</a>
-<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md" href="#">Services</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Products</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Quality</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Contact</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="../../index.html">Home</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md" href="services.html">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="products.html">Products</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="quality.html">Quality</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="faq.html">FAQ</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="gallery.html">Gallery</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="reviews.html">Reviews</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="contact.html">Contact</a>
 </div>
-<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-label-md active:scale-95 transition-transform">
-                Order Now
-            </button>
+<a class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-label-md active:scale-95 transition-transform" href="order.html">Order Now</a>
+
+<button id="menuBtn" class="md:hidden text-on-surface-variant hover:text-primary p-2">
+  <span class="material-symbols-outlined text-3xl">menu</span>
+</button>
 </nav>
+<!-- Mobile Sidebar -->
+<div id="mobileSidebar" class="fixed inset-0 z-50 invisible md:hidden">
+  <div id="sidebarBackdrop" class="fixed inset-0 bg-black/40 opacity-0 transition-opacity duration-300"></div>
+  <div id="sidebarPanel" class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+    <div class="flex items-center justify-between px-6 h-20 border-b border-outline-variant/20">
+      <span class="text-title-md font-display-lg font-bold text-primary">PureAqua</span>
+      <button id="closeSidebar" class="text-on-surface-variant hover:text-primary p-2">
+        <span class="material-symbols-outlined text-3xl">close</span>
+      </button>
+    </div>
+    <nav class="flex-1 overflow-y-auto p-6 space-y-1">
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="../../index.html">Home</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="services.html">Services</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="products.html">Products</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="quality.html">Quality</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="faq.html">FAQ</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="gallery.html">Gallery</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="reviews.html">Reviews</a>
+      <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors py-3 px-4 rounded-lg hover:bg-surface-container-low font-body-md" href="contact.html">Contact</a>
+      <hr class="border-outline-variant/20 my-4">
+      <a class="flex items-center justify-center gap-2 bg-primary text-white py-3 px-6 rounded-full font-bold hover:bg-primary-container transition-colors" href="order.html">
+        <span class="material-symbols-outlined">shopping_cart</span>
+        Order Now
+      </a>
+    </nav>
+  </div>
+</div>
+
 </header>
 <main class="pt-20">
 <!-- Hero Section -->
@@ -192,7 +225,7 @@
 <p class="text-label-md font-bold text-primary italic">"Reliable service that keeps our entire floor hydrated without interruption."</p>
 </div>
 </div>
-<button class="w-full bg-primary text-white py-3 rounded-lg font-bold hover:bg-primary-container transition-colors">Setup Office Account</button>
+<a class="w-full bg-primary text-white py-3 rounded-lg font-bold hover:bg-primary-container transition-colors" href="order.html">Setup Office Account</a>
 </div>
 <!-- Subscription Plans -->
 <div class="md:col-span-4 glass-card rounded-xl p-lg water-gradient text-white">
@@ -213,7 +246,7 @@
 <span class="font-bold">Custom</span>
 </div>
 </div>
-<button class="w-full bg-white text-primary py-3 rounded-lg font-bold hover:bg-surface-container-low transition-colors">View All Plans</button>
+<a class="w-full bg-white text-primary py-3 rounded-lg font-bold hover:bg-surface-container-low transition-colors" href="services.html">View All Plans</a>
 </div>
 <!-- RO Water Solutions -->
 <div class="md:col-span-8 glass-card rounded-xl overflow-hidden group">
@@ -235,7 +268,7 @@
 <p class="text-[10px] uppercase tracking-wider">Support</p>
 </div>
 </div>
-<button class="text-primary font-bold hover:underline">System Specifications</button>
+<a class="text-primary font-bold hover:underline" href="services.html">System Specifications</a>
 </div>
 </div>
 </div>
@@ -318,8 +351,8 @@
 <h2 class="font-display-lg text-display-lg mb-4">Ready for Professional Hydration?</h2>
 <p class="text-body-lg opacity-90 mb-lg max-w-2xl mx-auto">Join over 10,000 satisfied families and 500+ corporate clients who trust PureAqua for their daily water needs.</p>
 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-<button class="bg-white text-primary px-8 py-4 rounded-xl font-bold hover:shadow-xl transition-all active:scale-95">Get Started Now</button>
-<button class="border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-all">Request a Quote</button>
+<a class="bg-white text-primary px-8 py-4 rounded-xl font-bold hover:shadow-xl transition-all active:scale-95" href="order.html">Get Started Now</a>
+<a class="border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-all inline-block" href="contact.html">Request a Quote</a>
 </div>
 </div>
 </div>
@@ -335,9 +368,9 @@
 <div>
 <h4 class="font-title-md mb-4">Quick Links</h4>
 <ul class="space-y-2">
-<li><a class="text-on-surface-variant hover:text-primary transition-all" href="#">About Us</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-all" href="pages.html">About Us</a></li>
 <li><a class="text-on-surface-variant hover:text-primary transition-all" href="#">Water Quality Reports</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-all" href="#">Service Areas</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-all" href="delivery.html">Service Areas</a></li>
 </ul>
 </div>
 <div>
@@ -382,4 +415,34 @@
             observer.observe(el);
         });
     </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var menuBtn = document.getElementById('menuBtn');
+  var sidebar = document.getElementById('mobileSidebar');
+  var closeBtn = document.getElementById('closeSidebar');
+  var backdrop = document.getElementById('sidebarBackdrop');
+  var panel = document.getElementById('sidebarPanel');
+
+  if (!menuBtn || !sidebar) return;
+
+  function openSidebar() {
+    sidebar.classList.remove('invisible');
+    setTimeout(function() {
+      backdrop.classList.remove('opacity-0');
+      panel.classList.remove('translate-x-full');
+    }, 10);
+  }
+
+  function closeSidebar() {
+    backdrop.classList.add('opacity-0');
+    panel.classList.add('translate-x-full');
+    setTimeout(function() { sidebar.classList.add('invisible'); }, 300);
+  }
+
+  menuBtn.addEventListener('click', openSidebar);
+  if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+  if (backdrop) backdrop.addEventListener('click', closeSidebar);
+});
+</script>
 </body></html>
